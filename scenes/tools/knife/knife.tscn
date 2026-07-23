@@ -38,7 +38,7 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_w11nj")
 
-[node name="GrabComponent" type="Node" parent="." node_paths=PackedStringArray("grab_area", "parent")]
+[node name="GrabComponent" type="Node2D" parent="." node_paths=PackedStringArray("grab_area", "parent")]
 script = ExtResource("2_ti4u6")
 grab_area = NodePath("../Area2D")
 parent = NodePath("..")

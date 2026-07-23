@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name GrabComponent
 
 @export var grab_area : Area2D
@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if grabbing && Globals.mouse_down:
-		parent.global_position = get_viewport().get_mouse_position()
+		parent.global_position = get_global_mouse_position()
 	if not Globals.mouse_down && grabbing:
 		parent.linear_velocity = Globals.mouse_velocity*Globals.THROW_STRENGTH
 	if not Globals.mouse_down:

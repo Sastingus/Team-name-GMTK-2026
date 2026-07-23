@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://btxhrcasqfjue"]
+
+[ext_resource type="PackedScene" uid="uid://dvnngx1t1ppdt" path="res://scenes/stations/station.tscn" id="1_sqeqr"]
+[ext_resource type="Script" uid="uid://djfl16qf421c2" path="res://scenes/stations/station.gd" id="2_jwygn"]
+[ext_resource type="PackedScene" uid="uid://b5gebj45i87sl" path="res://scenes/tools/microwave/microwave.tscn" id="2_vpaal"]
+[ext_resource type="PackedScene" uid="uid://4xh6xtu3oxef" path="res://scenes/ingredients/test_obj.tscn" id="3_0qnlt"]
+[ext_resource type="Script" uid="uid://hqeekx3bwp31" path="res://scenes/stations/station_switcher/station_switcher.gd" id="3_vpaal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
+size = Vector2(163, 126)
+
+[node name="world" type="Node2D"]
+
+[node name="MicrowaveStation" parent="." instance=ExtResource("1_sqeqr")]
+position = Vector2(3, -1359)
+station_id = 4
+
+[node name="Microwave" parent="MicrowaveStation" instance=ExtResource("2_vpaal")]
+position = Vector2(-376, 178)
+
+[node name="test_obj" parent="MicrowaveStation" instance=ExtResource("3_0qnlt")]
+position = Vector2(62, 245)
+
+[node name="KitchenStation" type="Node2D" parent="."]
+script = ExtResource("2_jwygn")
+metadata/_custom_type_script = "uid://djfl16qf421c2"
+
+[node name="Camera2D" type="Camera2D" parent="KitchenStation"]
+
+[node name="StationSwitcher" type="Area2D" parent="KitchenStation"]
+position = Vector2(-407, 2)
+script = ExtResource("3_vpaal")
+station = 4
+metadata/_custom_type_script = "uid://hqeekx3bwp31"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/StationSwitcher"]
+position = Vector2(-25.5, -19)
+shape = SubResource("RectangleShape2D_0qnlt")
+
+[node name="Label" type="Label" parent="KitchenStation/StationSwitcher"]
+offset_left = -37.0
+offset_top = -79.0
+offset_right = 48.0
+offset_bottom = -56.0
+text = "microwave"
+
+[node name="Polygon2D" type="Polygon2D" parent="KitchenStation/StationSwitcher"]
+z_index = -1
+position = Vector2(-71.43532, -15)
+scale = Vector2(0.2829661, 0.36862692)
+color = Color(0.20033002, 0.20033002, 0.20032999, 1)
+polygon = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 413.34528, -89.832664, 414.88513, 134.749)
+uv = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 414.3338, -89.46701, 421.67078, 126.133644)
+
+[node name="temp_HeatLabel" type="Label" parent="KitchenStation/StationSwitcher/Polygon2D"]
+offset_left = 263.0537
+offset_top = -65.106476
+offset_right = 372.60742
+offset_bottom = -51.106476
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 10
+text = "current temp = 350"

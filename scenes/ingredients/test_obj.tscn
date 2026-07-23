@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://4xh6xtu3oxef"]
+[gd_scene load_steps=7 format=3 uid="uid://4xh6xtu3oxef"]
 
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="1_6i25b"]
 [ext_resource type="Script" uid="uid://b457sh2i4dh0g" path="res://scenes/components/cuttable_component.gd" id="2_odbhd"]
 [ext_resource type="PackedScene" uid="uid://c4jabiohssuyk" path="res://scenes/ingredients/test_replacement.tscn" id="3_the5u"]
 [ext_resource type="Script" uid="uid://dnkji1xxip324" path="res://scenes/components/microwaveable_component.gd" id="4_tavj5"]
+[ext_resource type="PackedScene" uid="uid://bnx8wooa55yh5" path="res://scenes/ingredients/test_burnt.tscn" id="5_wtgab"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i25b"]
 radius = 19.924858
@@ -11,7 +12,7 @@ radius = 19.924858
 [node name="test_obj" type="RigidBody2D"]
 lock_rotation = true
 
-[node name="GrabComponent" type="Node" parent="." node_paths=PackedStringArray("grab_area", "parent")]
+[node name="GrabComponent" type="Node2D" parent="." node_paths=PackedStringArray("grab_area", "parent")]
 script = ExtResource("1_6i25b")
 grab_area = NodePath("../Area2D")
 parent = NodePath("..")
@@ -27,6 +28,7 @@ metadata/_custom_type_script = "uid://b457sh2i4dh0g"
 script = ExtResource("4_tavj5")
 parent = NodePath("..")
 replacement_object = ExtResource("3_the5u")
+burnt_replacement_object = ExtResource("5_wtgab")
 metadata/_custom_type_script = "uid://dnkji1xxip324"
 
 [node name="Area2D" type="Area2D" parent="."]

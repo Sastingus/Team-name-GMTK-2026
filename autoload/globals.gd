@@ -11,6 +11,7 @@ var current_station : Stations = Stations.KITCHEN
 
 enum Stations{
 	KITCHEN,
+	RECIPE,
 	COUNTER,
 	KNIFE,
 	MICROWAVE,
@@ -24,6 +25,11 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("click"):
 		mouse_down = false
 		SignalBus.release.emit()
+	
+	if Input.is_action_just_pressed("back"):
+		SignalBus.back.emit()
+		if current_station != Stations.KITCHEN:
+			SignalBus.switch_station.emit(Stations.KITCHEN)
 	
 	if event is InputEventMouseMotion:
 		mouse_velocity = event.velocity
