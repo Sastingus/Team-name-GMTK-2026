@@ -18,6 +18,10 @@ func _process(delta: float) -> void:
 	if get_microwaveable():
 		current_temp += HEAT_PER_SECOND * delta
 	temp_heat_label.text = "current temp = "+str(round(current_temp))
+	if microwave_started:
+		door_button.disabled = true
+	else:
+		door_button.disabled = false
 
 func get_microwaveable() -> bool:
 	if current_target != null:
@@ -37,26 +41,26 @@ func _on_body_exited(body: Node2D) -> void:
 		current_target = null
 
 func _on_start_button_pressed() -> void:
-	microwave_started = true
+	if not microwave_opened:
+		microwave_started = true
 func _on_stop_button_pressed() -> void:
 	if get_microwaveable():
-		if current_target.get_node("Microwaveable_Component").target_heat <= current_temp:
-			current_target.get_node("Microwaveable_Component").microwave()
-		
 		if current_target.get_node("Microwaveable_Component").target_heat+BURNT_HEAT <= current_temp:
 			current_target.get_node("Microwaveable_Component").burn()
+		elif current_target.get_node("Microwaveable_Component").target_heat <= current_temp:
+			current_target.get_node("Microwaveable_Component").microwave()
 	microwave_started = false
+	current_temp = 0
 
-func _on_door_button_toggled(_toggled_on: bool) -> void:
+func _on_door_button_toggled(toggled_on: bool) -> void:
+	microwave_opened = toggled_on
 	if not microwave_started:
 		if microwave_opened:
-			microwave_opened = false
-			door_button.position += Vector2(DOOR_MOVE_DISTANCE,0)
+			door_button.position -= Vector2(DOOR_MOVE_DISTANCE,0)
 			microwave_floor.disabled = false
 			door_button.z_index = -1
 		else:
-			microwave_opened = true
-			door_button.position -= Vector2(DOOR_MOVE_DISTANCE,0)
+			door_button.position += Vector2(DOOR_MOVE_DISTANCE,0)
 			if current_target == null:
 				microwave_floor.disabled = true
 				door_button.z_index = -1

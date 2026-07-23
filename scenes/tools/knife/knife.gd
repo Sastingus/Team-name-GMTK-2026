@@ -10,7 +10,7 @@ func _on_body_entered(body: Node) -> void:
 	if hit_ready:
 		if body.has_node("CuttableComponent"):
 			body.get_node("CuttableComponent").hit()
-			hit_particles.position = self.get_colliding_bodies()[0].position
+			hit_particles.position = self.get_colliding_bodies()[0].global_position
 			hit_particles.emitting = true
 			hit_ready = false
 			hit_cooldown.start()

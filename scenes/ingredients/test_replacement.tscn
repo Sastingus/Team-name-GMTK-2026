@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4jabiohssuyk"]
+[gd_scene load_steps=5 format=3 uid="uid://c4jabiohssuyk"]
 
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="1_plsjk"]
+[ext_resource type="PackedScene" uid="uid://bnx8wooa55yh5" path="res://scenes/ingredients/test_burnt.tscn" id="2_7o8pp"]
 [ext_resource type="Script" uid="uid://b457sh2i4dh0g" path="res://scenes/components/cuttable_component.gd" id="2_pnryf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i25b"]
@@ -12,6 +13,7 @@ lock_rotation = true
 [node name="CuttableComponent" type="Node" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("2_pnryf")
 parent = NodePath("..")
+replacement_object = ExtResource("2_7o8pp")
 metadata/_custom_type_script = "uid://b457sh2i4dh0g"
 
 [node name="Area2D" type="Area2D" parent="."]

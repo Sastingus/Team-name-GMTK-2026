@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5gebj45i87sl"]
+[gd_scene load_steps=6 format=3 uid="uid://b5gebj45i87sl"]
 
 [ext_resource type="Script" uid="uid://c78ihvhqts5sy" path="res://scenes/tools/microwave/microwave.gd" id="1_6s3ad"]
 
@@ -7,6 +7,13 @@ size = Vector2(164, 125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bii8u"]
 size = Vector2(179.5, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s3ad"]
+bg_color = Color(0.6156863, 0.68235296, 0.07450981, 0.7607843)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6s3ad"]
 
@@ -61,6 +68,7 @@ offset_left = -91.0
 offset_top = -73.0
 offset_right = 92.0
 offset_bottom = 69.0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6s3ad")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6s3ad")
 toggle_mode = true
 

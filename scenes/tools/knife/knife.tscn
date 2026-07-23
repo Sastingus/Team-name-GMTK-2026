@@ -42,6 +42,7 @@ script = ExtResource("1_w11nj")
 script = ExtResource("2_ti4u6")
 grab_area = NodePath("../Area2D")
 parent = NodePath("..")
+station = 3
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://4xh6xtu3oxef"]
 
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="1_6i25b"]
-[ext_resource type="Script" uid="uid://b457sh2i4dh0g" path="res://scenes/components/cuttable_component.gd" id="2_odbhd"]
 [ext_resource type="PackedScene" uid="uid://c4jabiohssuyk" path="res://scenes/ingredients/test_replacement.tscn" id="3_the5u"]
 [ext_resource type="Script" uid="uid://dnkji1xxip324" path="res://scenes/components/microwaveable_component.gd" id="4_tavj5"]
 [ext_resource type="PackedScene" uid="uid://bnx8wooa55yh5" path="res://scenes/ingredients/test_burnt.tscn" id="5_wtgab"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="6_0stbn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i25b"]
 radius = 19.924858
@@ -18,11 +18,10 @@ grab_area = NodePath("../Area2D")
 parent = NodePath("..")
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
 
-[node name="CuttableComponent" type="Node" parent="." node_paths=PackedStringArray("parent")]
-script = ExtResource("2_odbhd")
+[node name="Ingredient_Component" type="Node" parent="." node_paths=PackedStringArray("parent")]
+script = ExtResource("6_0stbn")
 parent = NodePath("..")
-replacement_object = ExtResource("3_the5u")
-metadata/_custom_type_script = "uid://b457sh2i4dh0g"
+metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
 
 [node name="Microwaveable_Component" type="Node" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("4_tavj5")

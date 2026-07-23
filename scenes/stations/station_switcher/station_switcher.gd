@@ -2,9 +2,17 @@ extends Area2D
 class_name StationSwitcher
 
 @export var station : Globals.Stations
+var hovering = false
 
 func _ready() -> void:
-	SignalBus.click.connect(click)
+	SignalBus.back.connect(click)
 
 func click():
-	SignalBus.switch_station.emit(station)
+	if hovering:
+		SignalBus.switch_station.emit(station)
+		Globals.current_station = station
+
+func _mouse_enter() -> void:
+	hovering = true
+func _mouse_exit() -> void:
+	hovering = false
