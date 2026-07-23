@@ -32,6 +32,11 @@ click={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Base"
+2d_physics/layer_2="Ingredient"
+
 [physics]
 
 2d/default_gravity=1800.0

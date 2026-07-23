@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://62n6doyhs72j"]
+
+[ext_resource type="Script" uid="uid://b0lpf3g3ln4ik" path="res://scenes/tools/knife/knife.gd" id="1_w11nj"]
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_ti4u6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8owq"]
+size = Vector2(361, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7u1n"]
+size = Vector2(339, 39)
+
+[sub_resource type="Gradient" id="Gradient_ti4u6"]
+colors = PackedColorArray(0.4722861, 0.37187958, 0.3615785, 1, 0.68072534, 0.5686767, 0.55545163, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b8owq"]
+gradient = SubResource("Gradient_ti4u6")
+
+[sub_resource type="Curve" id="Curve_w7u1n"]
+_data = [Vector2(0, 0.48679245), 0.0, 0.0, 0, 0, Vector2(0.7055837, 0.92452836), -0.626018, -0.626018, 0, 0, Vector2(1, 0.38113213), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ert77"]
+curve = SubResource("Curve_w7u1n")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ttaj1"]
+particle_flag_disable_z = true
+radial_velocity_min = 249.99997
+radial_velocity_max = 249.99997
+gravity = Vector3(0, 0, 0)
+scale_min = 8.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_ert77")
+color_ramp = SubResource("GradientTexture1D_b8owq")
+
+[node name="Knife" type="RigidBody2D"]
+collision_mask = 3
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_w11nj")
+
+[node name="GrabComponent" type="Node" parent="." node_paths=PackedStringArray("grab_area", "parent")]
+script = ExtResource("2_ti4u6")
+grab_area = NodePath("../Area2D")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://dx8leo388mpyq"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-285.08676, -14.242558)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(158.5, 21.5)
+shape = SubResource("RectangleShape2D_b8owq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-124.58676, 1.2574425)
+shape = SubResource("RectangleShape2D_w7u1n")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-197.08676, -13.242558)
+scale = Vector2(0.49629465, 0.4407028)
+polygon = PackedVector2Array(-203.33333, -15.33333, 348.66672, -13.999994, 354, 8, 485.33337, 13.333333, 489.33334, 66, 354.6667, 64.66668, 358.00037, 96.47468, -70.83195, 64.47467)
+uv = PackedVector2Array(-202.66666, -18.666664, 349.33337, -27.333328, 354, 8, 441.33337, 12, 448, 64, 354.6667, 57.333344, 358.00037, 105.808014, -118.16528, 86.47467)
+
+[node name="HitParticles" type="GPUParticles2D" parent="."]
+top_level = true
+z_index = 1
+emitting = false
+amount = 16
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.83
+process_material = SubResource("ParticleProcessMaterial_ttaj1")
+
+[node name="HitCooldown" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="HitCooldown" to="." method="_on_hit_cooldown_timeout"]
