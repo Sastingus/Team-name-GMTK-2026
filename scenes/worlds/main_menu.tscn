@@ -7,3 +7,11 @@ offset_right = 1153.0
 offset_bottom = 653.0
 color = Color(0.20875412, 0.5200427, 0.48918688, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 223.0
+offset_top = 244.0
+offset_right = 264.0
+offset_bottom = 275.0
+text = "Play
+"

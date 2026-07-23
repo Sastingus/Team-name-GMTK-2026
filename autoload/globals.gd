@@ -5,6 +5,18 @@ var mouse_velocity := Vector2.ZERO
 
 const THROW_STRENGTH = 1
 
+var held_ingredient : RigidBody2D
+
+var current_station : Stations = Stations.KITCHEN
+
+enum Stations{
+	KITCHEN,
+	COUNTER,
+	KNIFE,
+	MICROWAVE,
+	PLATING
+}
+
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):
 		mouse_down = true

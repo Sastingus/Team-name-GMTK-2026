@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvnngx1t1ppdt"]
+
+[ext_resource type="Script" uid="uid://djfl16qf421c2" path="res://scenes/stations/station.gd" id="1_vl7xr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc6sy"]
+size = Vector2(189, 1052)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vl7xr"]
+size = Vector2(1232, 211.25)
+
+[node name="Station" type="Node2D"]
+script = ExtResource("1_vl7xr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+
+[node name="CollisionBox" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBox"]
+position = Vector2(670, -8)
+shape = SubResource("RectangleShape2D_jc6sy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionBox"]
+position = Vector2(-672, -10.165)
+shape = SubResource("RectangleShape2D_jc6sy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionBox"]
+position = Vector2(-6, 375)
+shape = SubResource("RectangleShape2D_vl7xr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionBox"]
+position = Vector2(-6, -430)
+shape = SubResource("RectangleShape2D_vl7xr")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionBox"]
+offset_left = -644.0
+offset_top = 267.0
+offset_right = 642.0
+offset_bottom = 351.0
+color = Color(0.5386092, 0.39931512, 0.1912916, 1)
+
+[node name="Inventory" type="Node2D" parent="."]
+unique_name_in_owner = true
