@@ -47,12 +47,12 @@ func _on_door_button_toggled(toggled_on: bool) -> void:
 	if microwave_opened:
 		door_button.position -= Vector2(DOOR_MOVE_DISTANCE,0)
 		microwave_floor.disabled = false
-		door_button.visibility_layer = -1
+		door_button.z_index = -1
 	else:
 		door_button.position += Vector2(DOOR_MOVE_DISTANCE,0)
 		if current_target == null:
 			microwave_floor.disabled = true
-			door_button.visibility_layer = 1
+			door_button.z_index = -1
 		else:
 			microwave_floor.disabled = false
-			door_button.visibility_layer = -1
+			door_button.z_index = 1
