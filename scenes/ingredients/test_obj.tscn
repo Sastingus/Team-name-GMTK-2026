@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://4xh6xtu3oxef"]
+
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab/grab_component.gd" id="1_6i25b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6i25b"]
+radius = 19.924858
+
+[node name="test_obj" type="RigidBody2D"]
+lock_rotation = true
+
+[node name="GrabComponent" type="Node" parent="." node_paths=PackedStringArray("grab_area", "parent")]
+script = ExtResource("1_6i25b")
+grab_area = NodePath("../Area2D")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://dx8leo388mpyq"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_6i25b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6i25b")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(87.28569, -5.785717)
+scale = Vector2(0.31607124, 0.3061225)
+color = Color(0.15696137, 0, 4.7809987, 1)
+polygon = PackedVector2Array(-325.4239, -16.800013, -282.03403, -33.600014, -236.66666, -30, -222.37299, 8.399988, -228.66666, 59.333344, -268.4747, 81.2, -320, 68, -336.27133, 33.59999)
+uv = PackedVector2Array(-335.3333, -23.333328, -236.66666, -30, -228.66666, 59.333344, -320, 68)

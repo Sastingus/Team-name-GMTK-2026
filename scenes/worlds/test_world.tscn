@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnxyvltx4c7ul"]
+
+[ext_resource type="PackedScene" uid="uid://4xh6xtu3oxef" path="res://scenes/ingredients/test_obj.tscn" id="1_k3ref"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3ref"]
+size = Vector2(1168, 364)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdhyl"]
+size = Vector2(313, 1042)
+
+[node name="test_world" type="Node2D"]
+
+[node name="test_obj" parent="." instance=ExtResource("1_k3ref")]
+position = Vector2(588, 322)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(585, 806)
+shape = SubResource("RectangleShape2D_k3ref")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(585, -172)
+shape = SubResource("RectangleShape2D_k3ref")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1307.5, 500)
+shape = SubResource("RectangleShape2D_wdhyl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-149, 500)
+shape = SubResource("RectangleShape2D_wdhyl")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -54.0
+offset_top = 620.0
+offset_right = 1189.0
+offset_bottom = 660.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 334)
