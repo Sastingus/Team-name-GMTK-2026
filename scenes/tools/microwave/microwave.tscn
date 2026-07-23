@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5gebj45i87sl"]
+
+[ext_resource type="Script" uid="uid://c78ihvhqts5sy" path="res://scenes/tools/microwave/microwave.gd" id="1_6s3ad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6s3ad"]
+size = Vector2(178, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bii8u"]
+size = Vector2(179.5, 20)
+
+[node name="Microwave" type="Area2D"]
+script = ExtResource("1_6s3ad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6s3ad")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = -1
+position = Vector2(-71.43532, -15)
+scale = Vector2(0.6494215, 0.8460174)
+polygon = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 413.34528, -89.832664, 414.88513, 134.749)
+uv = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 414.3338, -89.46701, 421.67078, 126.133644)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.25, 80)
+shape = SubResource("RectangleShape2D_bii8u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
