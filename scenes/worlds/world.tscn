@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://btxhrcasqfjue"]
+[gd_scene format=3 uid="uid://btxhrcasqfjue"]
 
 [ext_resource type="PackedScene" uid="uid://dvnngx1t1ppdt" path="res://scenes/stations/station.tscn" id="1_sqeqr"]
 [ext_resource type="Script" uid="uid://djfl16qf421c2" path="res://scenes/stations/station.gd" id="2_jwygn"]
@@ -10,42 +10,32 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
 
-[node name="world" type="Node2D"]
+[node name="world" type="Node2D" unique_id=737096411]
 
-[node name="MicrowaveStation" parent="." instance=ExtResource("1_sqeqr")]
-position = Vector2(3, -1359)
-station_id = 4
-
-[node name="Microwave" parent="MicrowaveStation" instance=ExtResource("2_vpaal")]
-position = Vector2(-376, 178)
-
-[node name="test_obj" parent="MicrowaveStation" instance=ExtResource("3_0qnlt")]
-position = Vector2(62, 245)
-
-[node name="KitchenStation" type="Node2D" parent="."]
+[node name="KitchenStation" type="Node2D" parent="." unique_id=1151275089]
 script = ExtResource("2_jwygn")
 metadata/_custom_type_script = "uid://djfl16qf421c2"
 
-[node name="Camera2D" type="Camera2D" parent="KitchenStation"]
+[node name="Camera2D" type="Camera2D" parent="KitchenStation" unique_id=351758182]
 
-[node name="MicrowaveStationSwitcher" type="Area2D" parent="KitchenStation"]
+[node name="MicrowaveStationSwitcher" type="Area2D" parent="KitchenStation" unique_id=149530949]
 position = Vector2(-407, 2)
 script = ExtResource("3_vpaal")
 station = 4
 metadata/_custom_type_script = "uid://hqeekx3bwp31"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/MicrowaveStationSwitcher"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/MicrowaveStationSwitcher" unique_id=1569348684]
 position = Vector2(-25.5, -19)
 shape = SubResource("RectangleShape2D_0qnlt")
 
-[node name="Label" type="Label" parent="KitchenStation/MicrowaveStationSwitcher"]
+[node name="Label" type="Label" parent="KitchenStation/MicrowaveStationSwitcher" unique_id=2018291006]
 offset_left = -37.0
 offset_top = -79.0
 offset_right = 48.0
 offset_bottom = -56.0
 text = "microwave"
 
-[node name="Polygon2D" type="Polygon2D" parent="KitchenStation/MicrowaveStationSwitcher"]
+[node name="Polygon2D" type="Polygon2D" parent="KitchenStation/MicrowaveStationSwitcher" unique_id=560359435]
 z_index = -1
 position = Vector2(-71.43532, -15)
 scale = Vector2(0.2829661, 0.36862692)
@@ -53,7 +43,7 @@ color = Color(0.20033002, 0.20033002, 0.20032999, 1)
 polygon = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 413.34528, -89.832664, 414.88513, 134.749)
 uv = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 414.3338, -89.46701, 421.67078, 126.133644)
 
-[node name="temp_HeatLabel" type="Label" parent="KitchenStation/MicrowaveStationSwitcher/Polygon2D"]
+[node name="temp_HeatLabel" type="Label" parent="KitchenStation/MicrowaveStationSwitcher/Polygon2D" unique_id=1045882926]
 offset_left = 263.0537
 offset_top = -65.106476
 offset_right = 372.60742
@@ -62,33 +52,43 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 10
 text = "current temp = 350"
 
-[node name="KnifeStationSwitcher" type="Area2D" parent="KitchenStation"]
+[node name="KnifeStationSwitcher" type="Area2D" parent="KitchenStation" unique_id=1960358375]
 position = Vector2(-178, 2)
 script = ExtResource("3_vpaal")
 station = 3
 metadata/_custom_type_script = "uid://hqeekx3bwp31"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/KnifeStationSwitcher"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/KnifeStationSwitcher" unique_id=626609330]
 position = Vector2(-25.5, -19)
 shape = SubResource("RectangleShape2D_0qnlt")
 
-[node name="Label" type="Label" parent="KitchenStation/KnifeStationSwitcher"]
+[node name="Label" type="Label" parent="KitchenStation/KnifeStationSwitcher" unique_id=735210594]
 offset_left = -37.0
 offset_top = -79.0
 offset_right = 48.0
 offset_bottom = -56.0
 text = "Knife"
 
-[node name="Polygon2D" type="Polygon2D" parent="KitchenStation/KnifeStationSwitcher"]
+[node name="Polygon2D" type="Polygon2D" parent="KitchenStation/KnifeStationSwitcher" unique_id=1425994351]
 z_index = -1
 position = Vector2(-63, 45.999996)
 scale = Vector2(0.2829661, 0.36862692)
 polygon = PackedVector2Array(-86.79053, -86.944275, 271.06488, -89.30636, 272.2459, -65.68553, 332.479, -66.86658, 338.38416, -34.978462, 268.70285, -38.521587, 271.0649, -17.262856, -32.462616, -34.97847)
 uv = PackedVector2Array(-86.79053, -86.944275, 271.06488, -89.30636, 274.60797, -50.332, 339.56525, -53.87513, 330.11688, -17.262848, 279.3322, -21.987015, 280.51324, -3.0903625, -28.919495, -7.8145294)
 
-[node name="KnifeStation" parent="." instance=ExtResource("1_sqeqr")]
+[node name="MicrowaveStation" parent="." unique_id=1889921677 instance=ExtResource("1_sqeqr")]
+position = Vector2(3, -1359)
+station_id = 4
+
+[node name="Microwave" parent="MicrowaveStation" unique_id=1913045611 instance=ExtResource("2_vpaal")]
+position = Vector2(-376, 178)
+
+[node name="test_obj" parent="MicrowaveStation" unique_id=596492730 instance=ExtResource("3_0qnlt")]
+position = Vector2(62, 245)
+
+[node name="KnifeStation" parent="." unique_id=1073761248 instance=ExtResource("1_sqeqr")]
 position = Vector2(2824, -1359)
 station_id = 3
 
-[node name="Knife" parent="KnifeStation" instance=ExtResource("6_0qnlt")]
+[node name="Knife" parent="KnifeStation" unique_id=472825561 instance=ExtResource("6_0qnlt")]
 position = Vector2(-255, 244)
