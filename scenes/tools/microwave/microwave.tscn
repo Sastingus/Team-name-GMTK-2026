@@ -1,31 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5gebj45i87sl"]
+[gd_scene load_steps=5 format=3 uid="uid://b5gebj45i87sl"]
 
 [ext_resource type="Script" uid="uid://c78ihvhqts5sy" path="res://scenes/tools/microwave/microwave.gd" id="1_6s3ad"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6s3ad"]
-size = Vector2(178, 140)
+size = Vector2(164, 125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bii8u"]
 size = Vector2(179.5, 20)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6s3ad"]
 
 [node name="Microwave" type="Area2D"]
 script = ExtResource("1_6s3ad")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_6s3ad")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 z_index = -1
 position = Vector2(-71.43532, -15)
 scale = Vector2(0.6494215, 0.8460174)
+color = Color(0.20033002, 0.20033002, 0.20032999, 1)
 polygon = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 413.34528, -89.832664, 414.88513, 134.749)
 uv = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 414.3338, -89.46701, 421.67078, 126.133644)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="MicrowaveFloor" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.25, 80)
 shape = SubResource("RectangleShape2D_bii8u")
+disabled = true
+
+[node name="temp_HeatLabel" type="Label" parent="."]
+offset_left = 96.0
+offset_top = -73.0
+offset_right = 189.0
+offset_bottom = -50.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 10
+text = "current temp = 350"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 115.0
+offset_top = -45.0
+offset_right = 161.0
+offset_bottom = -14.0
+text = "Start"
+
+[node name="DoorButton" type="Button" parent="."]
+z_index = -1
+offset_left = -91.0
+offset_top = -73.0
+offset_right = 92.0
+offset_bottom = 69.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6s3ad")
+toggle_mode = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="toggled" from="DoorButton" to="." method="_on_door_button_toggled"]

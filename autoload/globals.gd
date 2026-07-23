@@ -17,7 +17,7 @@ func _input(event: InputEvent) -> void:
 		mouse_velocity = event.velocity
 
 func replace(parent,replacement_object):
-	if replacement_object.can_instantiate():
+	if replacement_object != null:
 			var new_replacement_object = replacement_object.instantiate()
 			parent.add_sibling(new_replacement_object)
 			new_replacement_object.position = parent.position

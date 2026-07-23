@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnxyvltx4c7ul"]
+[gd_scene load_steps=6 format=3 uid="uid://bnxyvltx4c7ul"]
 
 [ext_resource type="PackedScene" uid="uid://4xh6xtu3oxef" path="res://scenes/ingredients/test_obj.tscn" id="1_k3ref"]
 [ext_resource type="PackedScene" uid="uid://62n6doyhs72j" path="res://scenes/tools/knife/knife.tscn" id="2_wdhyl"]
+[ext_resource type="PackedScene" uid="uid://b5gebj45i87sl" path="res://scenes/tools/microwave/microwave.tscn" id="3_nvj10"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3ref"]
 size = Vector2(1163, 364)
@@ -43,3 +44,6 @@ position = Vector2(580, 334)
 
 [node name="Knife" parent="." instance=ExtResource("2_wdhyl")]
 position = Vector2(1035, 537)
+
+[node name="Microwave" parent="." instance=ExtResource("3_nvj10")]
+position = Vector2(198, 527)
