@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dmb07pac4ciu4"]
+
+[ext_resource type="Script" uid="uid://du1tdvdh7mxch" path="res://scenes/tools/pepper_shaker/pepper_shaker.gd" id="1_3pjeb"]
+[ext_resource type="Texture2D" uid="uid://cb6vlcd35ghgu" path="res://assets/Sprite-0008.png" id="1_5slq1"]
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_7jw6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pjeb"]
+size = Vector2(105.000015, 148.99998)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2krf"]
+atlas = ExtResource("1_5slq1")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_07jyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2krf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07jyi"]
+size = Vector2(62, 108)
+
+[sub_resource type="Curve" id="Curve_vhamj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8243243, 0.9473685), -0.16691741, -0.16691741, 0, 0, Vector2(1, 0), -2.9741626, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1gpru"]
+curve = SubResource("Curve_vhamj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_07jyi"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(25.66, 1, 1)
+gravity = Vector3(0, 196, 0)
+scale_min = 4.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_1gpru")
+color = Color(0.24673045, 0.2837601, 0.23051092, 1)
+collision_mode = 2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6ruh"]
+radius = 59.0
+height = 184.0
+
+[node name="PepperShaker" type="RigidBody2D" unique_id=702866216]
+lock_rotation = true
+script = ExtResource("1_3pjeb")
+
+[node name="GrabComponent" type="Node2D" parent="." unique_id=1016704357 node_paths=PackedStringArray("grab_area", "parent")]
+rotation = 3.1415927
+script = ExtResource("2_7jw6a")
+grab_area = NodePath("../GrabArea")
+parent = NodePath("..")
+station = 3
+metadata/_custom_type_script = "uid://dx8leo388mpyq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=973312508]
+position = Vector2(-1.5000038, -14.499996)
+rotation = -3.1415925
+shape = SubResource("RectangleShape2D_3pjeb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2000902153]
+rotation = -3.1415925
+scale = Vector2(3.15625, 3.15625)
+sprite_frames = SubResource("SpriteFrames_07jyi")
+
+[node name="PepperArea" type="Area2D" parent="." unique_id=498909171]
+rotation = -3.1415925
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PepperArea" unique_id=1524832217]
+position = Vector2(0, -115)
+shape = SubResource("RectangleShape2D_07jyi")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="PepperArea" unique_id=235570281]
+position = Vector2(-1.0000055, -63)
+rotation = 3.1415925
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_07jyi")
+
+[node name="GrabArea" type="Area2D" parent="." unique_id=1343359913]
+rotation = -3.1415925
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=375268892]
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_e6ruh")
+
+[connection signal="body_entered" from="PepperArea" to="." method="_on_pepper_area_body_entered"]

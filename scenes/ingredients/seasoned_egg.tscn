@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://4fg5ks6px2aa"]
+
+[ext_resource type="Texture2D" uid="uid://cb6vlcd35ghgu" path="res://assets/Sprite-0008.png" id="1_5rpsg"]
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_5m1ey"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xaid1"]
+radius = 19.0
+height = 59.792248
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
+radius = 47.853943
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pqij"]
+atlas = ExtResource("1_5rpsg")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r87m8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pqij")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="SeasonedEgg" type="RigidBody2D" unique_id=1213985600]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1537771480]
+rotation = 1.5946369
+shape = SubResource("CapsuleShape2D_xaid1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1609873041]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1961634614]
+shape = SubResource("CircleShape2D_1gpru")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749977998]
+modulate = Color(0.60662574, 0.60662585, 0.6066258, 1)
+sprite_frames = SubResource("SpriteFrames_r87m8")
+animation = &"new_animation"
+
+[node name="GrabComponent" type="Node2D" parent="." unique_id=1534589526 node_paths=PackedStringArray("grab_area", "parent")]
+script = ExtResource("2_5m1ey")
+grab_area = NodePath("../Area2D")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://dx8leo388mpyq"
