@@ -10,11 +10,13 @@ func send_off():
 	if current_target != null:
 		current_target.reparent(sprite)
 		animation_player.play("send_off")
-		Globals.send_food(current_target)
+		if Globals.game_timer <= animation_player.current_animation_length + 0.25:
+			Globals.send_food(current_target)
 
 func delete_target():
 	current_target.queue_free()
 	animation_player.play("send_back")
+	Globals.send_food(current_target)
 
 
 func _on_plating_area_body_entered(body: Node2D) -> void:

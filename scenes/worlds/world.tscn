@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dmb07pac4ciu4" path="res://scenes/tools/pepper_shaker/pepper_shaker.tscn" id="7_folui"]
 [ext_resource type="PackedScene" uid="uid://bui68jasparpc" path="res://scenes/tools/Plate/plate.tscn" id="9_i30uk"]
 [ext_resource type="Texture2D" uid="uid://b1ncux0uqfrdd" path="res://assets/explosion.png" id="10_rbjkb"]
+[ext_resource type="Theme" uid="uid://bfti8v7mjvobe" path="res://assets/button_theme.tres" id="10_vx1ig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
@@ -276,10 +277,53 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
 text = "You ran out of time and everything blew up!"
 
-[node name="Explosion" type="AnimatedSprite2D" parent="Ui" unique_id=2062786099]
-visible = false
+[node name="RestartButton" type="Button" parent="Ui/LoseLabel" unique_id=934922653]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 92.0
+offset_right = 517.0
+offset_bottom = 119.0
+theme = ExtResource("10_vx1ig")
+text = "Back to main menu"
+
+[node name="Explosion" type="AnimatedSprite2D" parent="Ui/LoseLabel" unique_id=2062786099]
 z_index = -1
-position = Vector2(637, 375.00003)
+position = Vector2(488, 104.00003)
 scale = Vector2(8.7320385, 3.138822)
 sprite_frames = SubResource("SpriteFrames_07jyi")
-frame_progress = 0.9558142
+frame_progress = 0.2186335
+
+[node name="WinLabel" type="Label" parent="Ui" unique_id=1799992687]
+visible = false
+offset_left = 49.0
+offset_top = 233.0
+offset_right = 1115.0
+offset_bottom = 442.0
+theme_override_font_sizes/font_size = 49
+text = "Thanksgiving goes perfectly and no one suspects that
+it was all made in the last five minutes
+
+(thanks for playing!)"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Ui/WinLabel" unique_id=117002875]
+z_index = -1
+layout_mode = 0
+offset_left = -114.0
+offset_top = -290.0
+offset_right = 1158.0
+offset_bottom = 448.0
+mouse_filter = 2
+color = Color(0.42974138, 0.2604249, 0.3771949, 1)
+
+[node name="RestartButton" type="Button" parent="Ui/WinLabel" unique_id=44309425]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 254.0
+offset_right = 620.0
+offset_bottom = 281.0
+theme = ExtResource("10_vx1ig")
+text = "Back to main menu"
+
+[connection signal="pressed" from="Ui/LoseLabel/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Ui/WinLabel/RestartButton" to="." method="_on_restart_button_pressed"]

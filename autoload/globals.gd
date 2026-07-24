@@ -10,7 +10,7 @@ const RECIPE_COUNT = 1
 
 var in_game := false
 var game_timer := 0.0
-const GAME_TIME = 3
+const GAME_TIME = 10
 
 var current_station : Stations = Stations.KITCHEN
 
@@ -66,11 +66,9 @@ func send_food(food):
 func win():
 	in_game = false
 	SignalBus.win.emit()
-	print("you win!")
 
 func lose():
 	in_game = false
 	SignalBus.lose.emit()
-	game_timer = GAME_TIME
 	sent_food = []
 	current_station = Stations.KITCHEN
