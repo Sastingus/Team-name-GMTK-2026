@@ -15,7 +15,11 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Team-name-GMTK-2026"
+<<<<<<< Updated upstream
 run/main_scene="uid://btxhrcasqfjue"
+=======
+run/main_scene="uid://bnxyvltx4c7ul"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
