@@ -15,8 +15,11 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Team-name-GMTK-2026"
-run/main_scene="uid://btxhrcasqfjue"
+run/main_scene="uid://ckvi5em4cktnq"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/bg_color=Color(0.16862746, 0.11764706, 0.18431373, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://co5aplhdcab5j"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -30,7 +33,12 @@ gdscript/warnings/unused_signal=0
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="viewport"
+
+[gui]
+
+theme/custom_font="uid://bu8nk1sjrv7xg"
 
 [input]
 

@@ -6,7 +6,7 @@ var current_temp := 0.0
 var microwave_started := false
 var microwave_opened := false
 
-const HEAT_PER_SECOND = 50
+const HEAT_PER_SECOND = 100
 const DOOR_MOVE_DISTANCE = 200
 const BURNT_HEAT = 100
 @onready var temp_heat_label: Label = $temp_HeatLabel
