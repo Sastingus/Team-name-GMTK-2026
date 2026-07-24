@@ -9,6 +9,7 @@ var current_station : Stations = Stations.KITCHEN
 
 enum Stations{
 	KITCHEN,
+	SHELF,
 	RECIPE,
 	COUNTER,
 	KNIFE,

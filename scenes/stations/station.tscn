@@ -1,38 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvnngx1t1ppdt"]
+[gd_scene format=3 uid="uid://dvnngx1t1ppdt"]
 
 [ext_resource type="Script" uid="uid://djfl16qf421c2" path="res://scenes/stations/station.gd" id="1_vl7xr"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2oen"]
+size = Vector2(288.5, 1052)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc6sy"]
-size = Vector2(189, 1052)
+size = Vector2(310.5, 1052)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ic5c"]
+size = Vector2(1232, 345.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vl7xr"]
-size = Vector2(1232, 211.25)
+size = Vector2(1232, 331.8125)
 
-[node name="Station" type="Node2D"]
+[node name="Station" type="Node2D" unique_id=1350042118]
 script = ExtResource("1_vl7xr")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1904906099]
 enabled = false
 
-[node name="CollisionBox" type="StaticBody2D" parent="."]
+[node name="CollisionBox" type="StaticBody2D" parent="." unique_id=2111892794]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBox"]
-position = Vector2(670, -8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBox" unique_id=1819437575]
+position = Vector2(719.75, -8)
+shape = SubResource("RectangleShape2D_p2oen")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionBox" unique_id=1292560628]
+position = Vector2(-732.75, -10.165)
 shape = SubResource("RectangleShape2D_jc6sy")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionBox"]
-position = Vector2(-672, -10.165)
-shape = SubResource("RectangleShape2D_jc6sy")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionBox" unique_id=298658025]
+position = Vector2(-6, 442.1875)
+shape = SubResource("RectangleShape2D_3ic5c")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionBox"]
-position = Vector2(-6, 375)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionBox" unique_id=2122518345]
+position = Vector2(-6, -491.09375)
 shape = SubResource("RectangleShape2D_vl7xr")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionBox"]
-position = Vector2(-6, -430)
-shape = SubResource("RectangleShape2D_vl7xr")
-
-[node name="ColorRect" type="ColorRect" parent="CollisionBox"]
+[node name="ColorRect" type="ColorRect" parent="CollisionBox" unique_id=1863703579]
 offset_left = -644.0
 offset_top = 267.0
 offset_right = 642.0

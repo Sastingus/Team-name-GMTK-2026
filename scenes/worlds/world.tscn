@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://4xh6xtu3oxef" path="res://scenes/ingredients/test_obj.tscn" id="3_0qnlt"]
 [ext_resource type="Script" uid="uid://hqeekx3bwp31" path="res://scenes/stations/station_switcher/station_switcher.gd" id="3_vpaal"]
 [ext_resource type="PackedScene" uid="uid://62n6doyhs72j" path="res://scenes/tools/knife/knife.tscn" id="6_0qnlt"]
+[ext_resource type="PackedScene" uid="uid://bvu1us48n8nbf" path="res://scenes/ingredients/egg.tscn" id="6_xaid1"]
+[ext_resource type="PackedScene" uid="uid://dmb07pac4ciu4" path="res://scenes/tools/pepper_shaker/pepper_shaker.tscn" id="7_folui"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
@@ -86,9 +88,15 @@ position = Vector2(-376, 178)
 [node name="test_obj" parent="MicrowaveStation" unique_id=596492730 instance=ExtResource("3_0qnlt")]
 position = Vector2(62, 245)
 
+[node name="Egg" parent="MicrowaveStation" unique_id=1213985600 instance=ExtResource("6_xaid1")]
+position = Vector2(383, 220)
+
 [node name="KnifeStation" parent="." unique_id=1073761248 instance=ExtResource("1_sqeqr")]
 position = Vector2(2824, -1359)
 station_id = 3
 
 [node name="Knife" parent="KnifeStation" unique_id=472825561 instance=ExtResource("6_0qnlt")]
 position = Vector2(-255, 244)
+
+[node name="PepperShaker" parent="KnifeStation" unique_id=702866216 instance=ExtResource("7_folui")]
+position = Vector2(492, 202)
