@@ -79,6 +79,7 @@ shape = SubResource("RectangleShape2D_07jyi")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="PepperArea" unique_id=235570281]
 position = Vector2(-1.0000055, -63)
 rotation = 3.1415925
+emitting = false
 amount = 16
 process_material = SubResource("ParticleProcessMaterial_07jyi")
 

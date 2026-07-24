@@ -10,6 +10,7 @@ func send_off():
 	if current_target != null:
 		current_target.reparent(sprite)
 		animation_player.play("send_off")
+		Globals.send_food(current_target)
 
 func delete_target():
 	current_target.queue_free()
