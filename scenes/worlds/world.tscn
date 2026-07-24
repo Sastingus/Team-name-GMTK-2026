@@ -3,14 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://dvnngx1t1ppdt" path="res://scenes/stations/station.tscn" id="1_sqeqr"]
 [ext_resource type="Script" uid="uid://djfl16qf421c2" path="res://scenes/stations/station.gd" id="2_jwygn"]
 [ext_resource type="PackedScene" uid="uid://b5gebj45i87sl" path="res://scenes/tools/microwave/microwave.tscn" id="2_vpaal"]
-[ext_resource type="PackedScene" uid="uid://4xh6xtu3oxef" path="res://scenes/ingredients/test_obj.tscn" id="3_0qnlt"]
 [ext_resource type="Script" uid="uid://hqeekx3bwp31" path="res://scenes/stations/station_switcher/station_switcher.gd" id="3_vpaal"]
 [ext_resource type="PackedScene" uid="uid://62n6doyhs72j" path="res://scenes/tools/knife/knife.tscn" id="6_0qnlt"]
 [ext_resource type="PackedScene" uid="uid://bvu1us48n8nbf" path="res://scenes/ingredients/egg.tscn" id="6_xaid1"]
 [ext_resource type="PackedScene" uid="uid://dmb07pac4ciu4" path="res://scenes/tools/pepper_shaker/pepper_shaker.tscn" id="7_folui"]
+[ext_resource type="PackedScene" uid="uid://bui68jasparpc" path="res://scenes/tools/Plate/plate.tscn" id="9_i30uk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07jyi"]
+size = Vector2(163, 132)
 
 [node name="world" type="Node2D" unique_id=737096411]
 
@@ -78,15 +81,36 @@ scale = Vector2(0.2829661, 0.36862692)
 polygon = PackedVector2Array(-86.79053, -86.944275, 271.06488, -89.30636, 272.2459, -65.68553, 332.479, -66.86658, 338.38416, -34.978462, 268.70285, -38.521587, 271.0649, -17.262856, -32.462616, -34.97847)
 uv = PackedVector2Array(-86.79053, -86.944275, 271.06488, -89.30636, 274.60797, -50.332, 339.56525, -53.87513, 330.11688, -17.262848, 279.3322, -21.987015, 280.51324, -3.0903625, -28.919495, -7.8145294)
 
+[node name="PlatingStationSwitcher" type="Area2D" parent="KitchenStation" unique_id=1372410199]
+position = Vector2(459, 3)
+script = ExtResource("3_vpaal")
+station = 6
+metadata/_custom_type_script = "uid://hqeekx3bwp31"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/PlatingStationSwitcher" unique_id=1039286247]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_07jyi")
+
+[node name="Label" type="Label" parent="KitchenStation/PlatingStationSwitcher" unique_id=854662498]
+offset_left = -23.0
+offset_top = -61.0
+offset_right = 22.0
+offset_bottom = -45.0
+text = "Plating"
+
+[node name="Polygon2D" type="Polygon2D" parent="KitchenStation/PlatingStationSwitcher" unique_id=839292260]
+position = Vector2(2, 36)
+rotation = 0.008726646
+scale = Vector2(0.22509818, 0.22509818)
+polygon = PackedVector2Array(-265.66638, -14.666664, 333.0003, -18.666664, 271.667, 1.3333359, -225.66638, 5.333336)
+uv = PackedVector2Array(-265.66638, -14.666664, 333.0003, -18.666664, 271.667, 1.3333359, -221.66638, 8.666672)
+
 [node name="MicrowaveStation" parent="." unique_id=1889921677 instance=ExtResource("1_sqeqr")]
 position = Vector2(3, -1359)
 station_id = 4
 
 [node name="Microwave" parent="MicrowaveStation" unique_id=1913045611 instance=ExtResource("2_vpaal")]
 position = Vector2(-376, 178)
-
-[node name="test_obj" parent="MicrowaveStation" unique_id=596492730 instance=ExtResource("3_0qnlt")]
-position = Vector2(62, 245)
 
 [node name="Egg" parent="MicrowaveStation" unique_id=1213985600 instance=ExtResource("6_xaid1")]
 position = Vector2(383, 220)
@@ -100,3 +124,10 @@ position = Vector2(-255, 244)
 
 [node name="PepperShaker" parent="KnifeStation" unique_id=702866216 instance=ExtResource("7_folui")]
 position = Vector2(492, 202)
+
+[node name="PlateStation" parent="." unique_id=1350042118 instance=ExtResource("1_sqeqr")]
+position = Vector2(5826, -1363)
+station_id = 6
+
+[node name="Plate" parent="PlateStation" unique_id=1522694538 instance=ExtResource("9_i30uk")]
+position = Vector2(-28, 230)

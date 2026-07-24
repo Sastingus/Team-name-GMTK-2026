@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cb6vlcd35ghgu" path="res://assets/Sprite-0008.png" id="1_5rpsg"]
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_5m1ey"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="3_5rpsg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xaid1"]
 radius = 19.0
@@ -46,3 +47,9 @@ script = ExtResource("2_5m1ey")
 grab_area = NodePath("../Area2D")
 parent = NodePath("..")
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
+
+[node name="Ingredient_Component" type="Node" parent="." unique_id=362365127 node_paths=PackedStringArray("parent")]
+script = ExtResource("3_5rpsg")
+parent = NodePath("..")
+finished = true
+metadata/_custom_type_script = "uid://cq4cjkdh2qudr"

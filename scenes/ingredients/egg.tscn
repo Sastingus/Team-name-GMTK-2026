@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_qqldg"]
 [ext_resource type="Script" uid="uid://cmdod6jbv00h0" path="res://scenes/components/seasonable_component.gd" id="3_bi3u6"]
 [ext_resource type="PackedScene" uid="uid://4fg5ks6px2aa" path="res://scenes/ingredients/seasoned_egg.tscn" id="4_bi3u6"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="5_q8ax3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
 radius = 47.853943
@@ -52,3 +53,8 @@ metadata/_custom_type_script = "uid://cmdod6jbv00h0"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1803970261]
 rotation = 1.5946369
 shape = SubResource("CapsuleShape2D_bi3u6")
+
+[node name="Ingredient_Component" type="Node" parent="." unique_id=1945884771 node_paths=PackedStringArray("parent")]
+script = ExtResource("5_q8ax3")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://cq4cjkdh2qudr"

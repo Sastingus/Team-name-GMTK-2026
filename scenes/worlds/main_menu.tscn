@@ -2,30 +2,12 @@
 
 [ext_resource type="Script" uid="uid://djkllc2mra17l" path="res://scenes/worlds/main_menu.gd" id="1_v0ctj"]
 [ext_resource type="Texture2D" uid="uid://cb6vlcd35ghgu" path="res://assets/Sprite-0008.png" id="2_sh8mt"]
-[ext_resource type="Texture2D" uid="uid://cah3ar0eyk82r" path="res://assets/Sprite-0013.png" id="3_sh8mt"]
+[ext_resource type="Theme" uid="uid://bfti8v7mjvobe" path="res://assets/button_theme.tres" id="3_jixok"]
 [ext_resource type="FontFile" uid="uid://bu8nk1sjrv7xg" path="res://assets/GrapeSoda.ttf" id="3_v0ctj"]
 [ext_resource type="Texture2D" uid="uid://co5aplhdcab5j" path="res://assets/team-name-logo.png" id="5_jixok"]
 
 [sub_resource type="Theme" id="Theme_1b5k1"]
 default_font = ExtResource("3_v0ctj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gft63"]
-texture = ExtResource("3_sh8mt")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o40nt"]
-texture = ExtResource("3_sh8mt")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_leoyb"]
-texture = ExtResource("3_sh8mt")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xy320"]
-texture = ExtResource("3_sh8mt")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfs1t"]
-texture = ExtResource("3_sh8mt")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e6kir"]
-texture = ExtResource("3_sh8mt")
 
 [sub_resource type="Animation" id="Animation_wbiwk"]
 length = 0.001
@@ -130,32 +112,17 @@ scale = Vector2(4, 4)
 
 [node name="Start" type="Button" parent="Control/VBoxContainer" unique_id=164243948]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_gft63")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_o40nt")
-theme_override_styles/hover = SubResource("StyleBoxTexture_leoyb")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xy320")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_pfs1t")
-theme_override_styles/focus = SubResource("StyleBoxTexture_e6kir")
+theme = ExtResource("3_jixok")
 text = "Start"
 
 [node name="Settings" type="Button" parent="Control/VBoxContainer" unique_id=1584194471]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_gft63")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_o40nt")
-theme_override_styles/hover = SubResource("StyleBoxTexture_leoyb")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xy320")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_pfs1t")
-theme_override_styles/focus = SubResource("StyleBoxTexture_e6kir")
+theme = ExtResource("3_jixok")
 text = "Settings"
 
 [node name="Quit" type="Button" parent="Control/VBoxContainer" unique_id=542034038]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_gft63")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_o40nt")
-theme_override_styles/hover = SubResource("StyleBoxTexture_leoyb")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xy320")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_pfs1t")
-theme_override_styles/focus = SubResource("StyleBoxTexture_e6kir")
+theme = ExtResource("3_jixok")
 text = "Quit"
 
 [node name="Label" type="Label" parent="Control" unique_id=1887727985]

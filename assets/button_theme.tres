@@ -1,0 +1,26 @@
+[gd_resource type="Theme" format=3 uid="uid://bfti8v7mjvobe"]
+
+[ext_resource type="Texture2D" uid="uid://cah3ar0eyk82r" path="res://assets/Sprite-0013.png" id="1_lbl2b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pfs1t"]
+texture = ExtResource("1_lbl2b")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1gpru"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xy320"]
+texture = ExtResource("1_lbl2b")
+modulate_color = Color(0.7274283, 0.7274284, 0.7274283, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gft63"]
+texture = ExtResource("1_lbl2b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o40nt"]
+texture = ExtResource("1_lbl2b")
+modulate_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_pfs1t")
+Button/styles/focus = SubResource("StyleBoxEmpty_1gpru")
+Button/styles/hover = SubResource("StyleBoxTexture_xy320")
+Button/styles/normal = SubResource("StyleBoxTexture_gft63")
+Button/styles/pressed = SubResource("StyleBoxTexture_o40nt")
