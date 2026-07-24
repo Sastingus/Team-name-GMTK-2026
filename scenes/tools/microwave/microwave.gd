@@ -59,6 +59,7 @@ func _on_door_button_toggled(toggled_on: bool) -> void:
 			door_button.position -= Vector2(DOOR_MOVE_DISTANCE,0)
 			microwave_floor.disabled = false
 			door_button.z_index = -1
+			recalculate_target()
 		else:
 			door_button.position += Vector2(DOOR_MOVE_DISTANCE,0)
 			if current_target == null:
@@ -67,3 +68,8 @@ func _on_door_button_toggled(toggled_on: bool) -> void:
 			else:
 				microwave_floor.disabled = false
 				door_button.z_index = 1
+
+func recalculate_target():
+	for body in get_overlapping_bodies():
+		if body.has_node("Microwaveable_Component"):
+			body_entered.emit(body)
