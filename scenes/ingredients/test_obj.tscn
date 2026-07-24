@@ -1,46 +1,58 @@
-[gd_scene load_steps=7 format=3 uid="uid://4xh6xtu3oxef"]
+[gd_scene format=3 uid="uid://4xh6xtu3oxef"]
 
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="1_6i25b"]
 [ext_resource type="PackedScene" uid="uid://c4jabiohssuyk" path="res://scenes/ingredients/test_replacement.tscn" id="3_the5u"]
 [ext_resource type="Script" uid="uid://dnkji1xxip324" path="res://scenes/components/microwaveable_component.gd" id="4_tavj5"]
 [ext_resource type="PackedScene" uid="uid://bnx8wooa55yh5" path="res://scenes/ingredients/test_burnt.tscn" id="5_wtgab"]
 [ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="6_0stbn"]
+[ext_resource type="Texture2D" uid="uid://cb6vlcd35ghgu" path="res://assets/Sprite-0008.png" id="6_q6wa8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i25b"]
 radius = 19.924858
 
-[node name="test_obj" type="RigidBody2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3vx1"]
+atlas = ExtResource("6_q6wa8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gft63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3vx1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="test_obj" type="RigidBody2D" unique_id=891060379]
 lock_rotation = true
 
-[node name="GrabComponent" type="Node2D" parent="." node_paths=PackedStringArray("grab_area", "parent")]
+[node name="GrabComponent" type="Node2D" parent="." unique_id=991584793 node_paths=PackedStringArray("grab_area", "parent")]
 script = ExtResource("1_6i25b")
 grab_area = NodePath("../Area2D")
 parent = NodePath("..")
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
 
-[node name="Ingredient_Component" type="Node" parent="." node_paths=PackedStringArray("parent")]
+[node name="Ingredient_Component" type="Node" parent="." unique_id=1424248561 node_paths=PackedStringArray("parent")]
 script = ExtResource("6_0stbn")
 parent = NodePath("..")
 metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
 
-[node name="Microwaveable_Component" type="Node" parent="." node_paths=PackedStringArray("parent")]
+[node name="Microwaveable_Component" type="Node" parent="." unique_id=11926082 node_paths=PackedStringArray("parent")]
 script = ExtResource("4_tavj5")
 parent = NodePath("..")
 replacement_object = ExtResource("3_the5u")
 burnt_replacement_object = ExtResource("5_wtgab")
 metadata/_custom_type_script = "uid://dnkji1xxip324"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1114719448]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=61530527]
 shape = SubResource("CircleShape2D_6i25b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=381066863]
 shape = SubResource("CircleShape2D_6i25b")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(87.28569, -5.785717)
-scale = Vector2(0.31607124, 0.3061225)
-color = Color(0.15696137, 0, 4.7809987, 1)
-polygon = PackedVector2Array(-325.4239, -16.800013, -282.03403, -33.600014, -236.66666, -30, -222.37299, 8.399988, -228.66666, 59.333344, -268.4747, 81.2, -320, 68, -336.27133, 33.59999)
-uv = PackedVector2Array(-335.3333, -23.333328, -236.66666, -30, -228.66666, 59.333344, -320, 68)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=230628026]
+sprite_frames = SubResource("SpriteFrames_gft63")
