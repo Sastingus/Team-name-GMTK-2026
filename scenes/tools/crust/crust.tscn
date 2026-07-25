@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ntwsa16ebcsq"]
+
+[ext_resource type="Script" uid="uid://dhyxjqeagoqjc" path="res://scenes/tools/crust/crust.gd" id="1_k60hp"]
+[ext_resource type="PackedScene" uid="uid://blipp3kyphxgt" path="res://scenes/ingredients/pumpkin_pie/raw_pumpkin_pie.tscn" id="2_ibsq7"]
+[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="2_uopgt"]
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="3_ibsq7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1gpru"]
+radius = 21.0
+height = 80.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eewq7"]
+atlas = ExtResource("2_uopgt")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_07jyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eewq7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_330u6"]
+radius = 25.0
+height = 92.0
+
+[node name="Crust" type="RigidBody2D" unique_id=1870618234]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_k60hp")
+pumpkin_pie = ExtResource("2_ibsq7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=350261942]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1gpru")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1666183227]
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_07jyi")
+
+[node name="GrabComponent" type="Node2D" parent="." unique_id=1854913338 node_paths=PackedStringArray("grab_area", "parent")]
+script = ExtResource("3_ibsq7")
+grab_area = NodePath("../GrabArea")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://dx8leo388mpyq"
+
+[node name="GrabArea" type="Area2D" parent="." unique_id=1547601851]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=1338901497]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_330u6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

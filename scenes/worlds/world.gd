@@ -38,6 +38,3 @@ func music_player():
 		if not audio_stream_player.stream == load("res://assets/music/SONG3BS2WT.mp3"):
 			audio_stream_player.stream = preload("res://assets/music/SONG3BS2WT.mp3")
 			audio_stream_player.play()
-			
-	get_tree().paused = false
-	get_tree().change_scene_to_packed(preload("res://scenes/worlds/main_menu.tscn"))

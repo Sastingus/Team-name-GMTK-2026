@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bvdcyucxpcyw8"]
+
+[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="1_sy82w"]
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_po6f0"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="3_po6f0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
+radius = 24.083189
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axrqg"]
+atlas = ExtResource("1_sy82w")
+region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_07jyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axrqg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k77dg"]
+radius = 29.614185
+
+[node name="PumpkinBits" type="RigidBody2D" unique_id=710645974]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1415071975]
+shape = SubResource("CircleShape2D_1gpru")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=24738396]
+position = Vector2(-2, 3)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_07jyi")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1341014059]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1153760749]
+shape = SubResource("CircleShape2D_k77dg")
+
+[node name="GrabComponent" type="Node2D" parent="." unique_id=1604674515 node_paths=PackedStringArray("grab_area", "parent")]
+script = ExtResource("2_po6f0")
+grab_area = NodePath("../Area2D")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://dx8leo388mpyq"
+
+[node name="Ingredient_Component" type="Node" parent="." unique_id=1880176233 node_paths=PackedStringArray("parent")]
+script = ExtResource("3_po6f0")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://cq4cjkdh2qudr"

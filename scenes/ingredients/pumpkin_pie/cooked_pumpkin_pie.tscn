@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://o2bgw2fdq8hc"]
+
+[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="1_ys5xe"]
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_ca10u"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="3_443sh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nke1b"]
+atlas = ExtResource("1_ys5xe")
+region = Rect2(48, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b2rv0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nke1b")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_07jyi"]
+radius = 22.0
+height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6asyo"]
+radius = 22.0
+height = 88.0
+
+[node name="CookedPumpkinPie" type="RigidBody2D" unique_id=710645974]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=24738396]
+modulate = Color(0.7005924, 0.6923484, 0.46856916, 1)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_b2rv0")
+animation = &"new_animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1415071975]
+position = Vector2(0, -8)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_07jyi")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1341014059]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=645271619]
+position = Vector2(0, -8)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6asyo")
+
+[node name="GrabComponent" type="Node2D" parent="." unique_id=1604674515 node_paths=PackedStringArray("grab_area", "parent")]
+script = ExtResource("2_ca10u")
+grab_area = NodePath("../Area2D")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://dx8leo388mpyq"
+
+[node name="Ingredient_Component" type="Node" parent="." unique_id=1880176233 node_paths=PackedStringArray("parent")]
+script = ExtResource("3_443sh")
+parent = NodePath("..")
+finished = true
+metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
