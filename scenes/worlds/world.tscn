@@ -9,7 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bu8nk1sjrv7xg" path="res://assets/GrapeSoda.ttf" id="4_n71ak"]
 [ext_resource type="PackedScene" uid="uid://62n6doyhs72j" path="res://scenes/tools/knife/knife.tscn" id="6_0qnlt"]
 [ext_resource type="PackedScene" uid="uid://dmb07pac4ciu4" path="res://scenes/tools/pepper_shaker/pepper_shaker.tscn" id="7_folui"]
-[ext_resource type="PackedScene" uid="uid://bui68jasparpc" path="res://scenes/tools/Plate/plate.tscn" id="9_i30uk"]
+[ext_resource type="PackedScene" uid="uid://bui68jasparpc" path="res://scenes/tools/plate/plate.tscn" id="9_i30uk"]
 [ext_resource type="Texture2D" uid="uid://b1ncux0uqfrdd" path="res://assets/explosion.png" id="10_rbjkb"]
 [ext_resource type="Theme" uid="uid://bfti8v7mjvobe" path="res://assets/button_theme.tres" id="10_vx1ig"]
 [ext_resource type="PackedScene" uid="uid://f1j8e05t3gcv" path="res://scenes/ingredients/infinite_source/infinite_source.tscn" id="11_thq3p"]
@@ -18,6 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://bxx27r8k46lmy" path="res://scenes/ingredients/turkey/new_turkey.tscn" id="14_rjcos"]
 [ext_resource type="PackedScene" uid="uid://c0p77y6hukof" path="res://scenes/tools/recipe_card/recipe_card.tscn" id="14_svvlm"]
 [ext_resource type="PackedScene" uid="uid://c4gew3tk35if6" path="res://scenes/ingredients/stuffing/new_stuffing.tscn" id="15_w8a3b"]
+[ext_resource type="PackedScene" uid="uid://b2ym0txvpxj0f" path="res://scenes/ingredients/corn/new_corn.tscn" id="16_1i314"]
+[ext_resource type="PackedScene" uid="uid://blqe2oodbsuac" path="res://scenes/ingredients/cranberry_sauce/new_cranberry.tscn" id="16_5kpmn"]
+[ext_resource type="PackedScene" uid="uid://clef80eg1phc3" path="res://scenes/ingredients/pumpkin_pie/pumpkin.tscn" id="17_qld6t"]
+[ext_resource type="PackedScene" uid="uid://ntwsa16ebcsq" path="res://scenes/tools/crust/crust.tscn" id="18_8l1xj"]
+[ext_resource type="PackedScene" uid="uid://bi6dldcc3mifa" path="res://scenes/ingredients/mashed_potatoes/new_potato.tscn" id="18_np8mm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
@@ -114,7 +119,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w8a3b"]
-radius = 49.24429
+radius = 39.012817
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_va40k"]
 atlas = ExtResource("13_3k0i1")
@@ -125,6 +130,91 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_va40k")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsxng"]
+atlas = ExtResource("13_3k0i1")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_30tpb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsxng")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1i314"]
+radius = 30.594116
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcedh"]
+atlas = ExtResource("13_3k0i1")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uv86p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcedh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30tpb"]
+atlas = ExtResource("13_3k0i1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nig8m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30tpb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8l1xj"]
+radius = 46.173584
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv86p"]
+atlas = ExtResource("13_3k0i1")
+region = Rect2(96, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2k0g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv86p")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fsxng"]
+radius = 26.0
+height = 86.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2k0g"]
+atlas = ExtResource("13_3k0i1")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fsxng"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2k0g")
 }],
 "loop": 1,
 "name": &"default",
@@ -532,7 +622,7 @@ mouse_filter = 2
 color = Color(0.13333334, 0.1254902, 0.20392157, 1)
 
 [node name="EggCrate" parent="ShelfStation" unique_id=1837830928 instance=ExtResource("11_thq3p")]
-position = Vector2(-2918, -1319)
+position = Vector2(-2616, -1093)
 spawned_item = ExtResource("12_svvlm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/EggCrate" unique_id=1133164619]
@@ -545,7 +635,7 @@ scale = Vector2(7.5, 7.5)
 sprite_frames = SubResource("SpriteFrames_1gpru")
 
 [node name="Turkey" parent="ShelfStation" unique_id=490739703 instance=ExtResource("11_thq3p")]
-position = Vector2(-2922, -1541)
+position = Vector2(-2537, -1324)
 spawned_item = ExtResource("14_rjcos")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/Turkey" unique_id=1448880557]
@@ -558,7 +648,7 @@ scale = Vector2(6.12, 6.12)
 sprite_frames = SubResource("SpriteFrames_va40k")
 
 [node name="CannedStuffing" parent="ShelfStation" unique_id=1177094392 instance=ExtResource("11_thq3p")]
-position = Vector2(-2715, -1541)
+position = Vector2(-2408, -1319)
 spawned_item = ExtResource("15_w8a3b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/CannedStuffing" unique_id=1594269491]
@@ -569,6 +659,72 @@ shape = SubResource("CircleShape2D_w8a3b")
 position = Vector2(41, 7)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_jcedh")
+
+[node name="CannedCranberry" parent="ShelfStation" unique_id=828570527 instance=ExtResource("11_thq3p")]
+position = Vector2(-2292, -1319)
+spawned_item = ExtResource("16_5kpmn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/CannedCranberry" unique_id=1518176283]
+position = Vector2(41, 5)
+shape = SubResource("CircleShape2D_w8a3b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ShelfStation/CannedCranberry" unique_id=174653413]
+position = Vector2(41, 7)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_30tpb")
+
+[node name="HuskedCorn" parent="ShelfStation" unique_id=1971124065 instance=ExtResource("11_thq3p")]
+position = Vector2(-2227, -1083)
+spawned_item = ExtResource("16_1i314")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/HuskedCorn" unique_id=1085112080]
+position = Vector2(41, 5)
+shape = SubResource("CircleShape2D_1i314")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ShelfStation/HuskedCorn" unique_id=2112476122]
+position = Vector2(41, 7)
+scale = Vector2(3.304, 3.304)
+sprite_frames = SubResource("SpriteFrames_uv86p")
+
+[node name="Potato" parent="ShelfStation" unique_id=1043811835 instance=ExtResource("11_thq3p")]
+position = Vector2(-2065, -1092)
+spawned_item = ExtResource("18_np8mm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/Potato" unique_id=574863556]
+position = Vector2(41, 5)
+shape = SubResource("CircleShape2D_1i314")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ShelfStation/Potato" unique_id=967721212]
+position = Vector2(41, 7)
+scale = Vector2(4.16, 4.16)
+sprite_frames = SubResource("SpriteFrames_nig8m")
+
+[node name="Pumpkin" parent="ShelfStation" unique_id=978820794 instance=ExtResource("11_thq3p")]
+position = Vector2(-2134, -1542)
+spawned_item = ExtResource("17_qld6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/Pumpkin" unique_id=1546873671]
+position = Vector2(41, 5)
+shape = SubResource("CircleShape2D_8l1xj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ShelfStation/Pumpkin" unique_id=828037984]
+position = Vector2(41.999996, 0)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_k2k0g")
+
+[node name="EmptyCrust" parent="ShelfStation" unique_id=1590294284 instance=ExtResource("11_thq3p")]
+position = Vector2(-1999, -1547)
+spawned_item = ExtResource("18_8l1xj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/EmptyCrust" unique_id=390121808]
+position = Vector2(40, 19)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_fsxng")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ShelfStation/EmptyCrust" unique_id=1135865056]
+position = Vector2(41.999996, 19.999998)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_fsxng")
 
 [node name="RecipeStation" parent="." unique_id=1607371014 instance=ExtResource("1_sqeqr")]
 z_index = -1

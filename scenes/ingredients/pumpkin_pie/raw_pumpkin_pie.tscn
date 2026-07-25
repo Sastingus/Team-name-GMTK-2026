@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_vwqvf"]
 [ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="3_phfyj"]
 [ext_resource type="Script" uid="uid://dnkji1xxip324" path="res://scenes/components/microwaveable_component.gd" id="4_1c6u3"]
+[ext_resource type="PackedScene" uid="uid://o2bgw2fdq8hc" path="res://scenes/ingredients/pumpkin_pie/cooked_pumpkin_pie.tscn" id="5_hbuik"]
+[ext_resource type="PackedScene" uid="uid://coiwnb8m80kly" path="res://scenes/ingredients/pumpkin_pie/burnt_pumpkin_pie.tscn" id="6_46yef"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_07jyi"]
 radius = 22.0
@@ -53,13 +55,28 @@ grab_area = NodePath("../Area2D")
 parent = NodePath("..")
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
 
-[node name="Ingredient_Component" type="Node" parent="." unique_id=1880176233 node_paths=PackedStringArray("parent")]
+[node name="Ingredient_Component" type="Node" parent="." unique_id=1880176233 node_paths=PackedStringArray("parent", "label", "grab_component")]
 script = ExtResource("3_phfyj")
 parent = NodePath("..")
+label = NodePath("../Label")
+item_name = "Pumpkin Pie"
+effects_list = Array[int]([1])
+grab_component = NodePath("../GrabComponent")
 metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
 
 [node name="Microwaveable_Component" type="Node" parent="." unique_id=1416154221 node_paths=PackedStringArray("parent")]
 script = ExtResource("4_1c6u3")
 parent = NodePath("..")
 target_heat = 250
+replacement_object = ExtResource("5_hbuik")
+burnt_replacement_object = ExtResource("6_46yef")
 metadata/_custom_type_script = "uid://dnkji1xxip324"
+
+[node name="Label" type="Label" parent="." unique_id=1198156259]
+top_level = true
+offset_left = -26.0
+offset_top = -112.0
+offset_right = 31.0
+offset_bottom = -26.0
+horizontal_alignment = 1
+vertical_alignment = 1

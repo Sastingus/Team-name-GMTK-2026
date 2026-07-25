@@ -11,22 +11,23 @@ func send_off():
 		current_target.reparent(sprite)
 		animation_player.play("send_off")
 		if Globals.game_timer <= animation_player.current_animation_length + 0.25:
-			Globals.send_food(current_target)
+			Globals.send_food(current_target.name)
 
 func delete_target():
 	current_target.queue_free()
 	animation_player.play("send_back")
-	Globals.send_food(current_target)
+	Globals.send_food(current_target.name)
 
 
 func _on_plating_area_body_entered(body: Node2D) -> void:
 	if body.has_node("Ingredient_Component"):
 		if body.get_node("Ingredient_Component").finished:
 			current_target = body
-			button.visible = true
+			if animation_player.current_animation == "":
+				button.visible = true
 
 
 func _on_plating_area_body_exited(body: Node2D) -> void:
 	if body == current_target:
-		current_target == null
+		current_target = null
 		button.visible = false

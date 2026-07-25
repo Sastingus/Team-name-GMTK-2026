@@ -46,7 +46,20 @@ grab_area = NodePath("../Area2D")
 parent = NodePath("..")
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
 
-[node name="Ingredient_Component" type="Node" parent="." unique_id=1880176233 node_paths=PackedStringArray("parent")]
+[node name="Ingredient_Component" type="Node" parent="." unique_id=1880176233 node_paths=PackedStringArray("parent", "label", "grab_component")]
 script = ExtResource("3_po6f0")
 parent = NodePath("..")
+label = NodePath("../Label")
+item_name = "Pumpkin Bits"
+effects_list = Array[int]([0])
+grab_component = NodePath("../GrabComponent")
 metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
+
+[node name="Label" type="Label" parent="." unique_id=521089260]
+top_level = true
+offset_left = -26.0
+offset_top = -112.0
+offset_right = 31.0
+offset_bottom = -26.0
+horizontal_alignment = 1
+vertical_alignment = 1

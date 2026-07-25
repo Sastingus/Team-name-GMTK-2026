@@ -86,12 +86,12 @@ color = Color(0.056291588, 0.056291603, 0.056291595, 1)
 modulate = Color(1.6364455e-06, 0.69717866, 0.69735605, 1)
 z_index = 1
 layout_mode = 0
-offset_left = 7.0
-offset_top = 4.0
-offset_right = 30.0
-offset_bottom = 15.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 36.0
+offset_bottom = 19.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 15
 text = "350.0°"
 horizontal_alignment = 1
 

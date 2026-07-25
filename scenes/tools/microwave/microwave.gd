@@ -15,6 +15,8 @@ const BURNT_HEAT = 100
 
 
 func _process(delta: float) -> void:
+	current_temp = clamp(current_temp,0,650)
+	
 	if get_microwaveable():
 		current_temp += HEAT_PER_SECOND * delta
 	heat_label.text = str(round(current_temp))+"°"

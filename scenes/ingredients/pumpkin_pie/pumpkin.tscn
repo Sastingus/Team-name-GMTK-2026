@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://clef80eg1phc3"]
+
+[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="1_fk1gv"]
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_qxnny"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="3_m8u3s"]
+[ext_resource type="Script" uid="uid://b457sh2i4dh0g" path="res://scenes/components/cuttable_component.gd" id="4_ocmtk"]
+[ext_resource type="PackedScene" uid="uid://bvdcyucxpcyw8" path="res://scenes/ingredients/pumpkin_pie/PumpkinBits.tscn" id="5_0ah5t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ka0g8"]
+radius = 39.45884
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u8sh"]
+atlas = ExtResource("1_fk1gv")
+region = Rect2(96, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urmbi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u8sh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_guvh6"]
+radius = 49.0
+
+[node name="Pumpkin" type="RigidBody2D" unique_id=710645974]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1415071975]
+shape = SubResource("CircleShape2D_ka0g8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=24738396]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_urmbi")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1341014059]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1153760749]
+shape = SubResource("CircleShape2D_guvh6")
+
+[node name="GrabComponent" type="Node2D" parent="." unique_id=1604674515 node_paths=PackedStringArray("grab_area", "parent")]
+script = ExtResource("2_qxnny")
+grab_area = NodePath("../Area2D")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://dx8leo388mpyq"
+
+[node name="Ingredient_Component" type="Node" parent="." unique_id=1880176233 node_paths=PackedStringArray("parent", "label", "grab_component")]
+script = ExtResource("3_m8u3s")
+parent = NodePath("..")
+label = NodePath("../Label")
+item_name = "Pumpkin"
+grab_component = NodePath("../GrabComponent")
+metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
+
+[node name="CuttableComponent" type="Node" parent="." unique_id=1186867477 node_paths=PackedStringArray("parent")]
+script = ExtResource("4_ocmtk")
+parent = NodePath("..")
+target_hits = 5
+replacement_object = ExtResource("5_0ah5t")
+metadata/_custom_type_script = "uid://b457sh2i4dh0g"
+
+[node name="Label" type="Label" parent="." unique_id=1509636830]
+top_level = true
+offset_left = -26.0
+offset_top = -112.0
+offset_right = 31.0
+offset_bottom = -26.0
+horizontal_alignment = 1
+vertical_alignment = 1

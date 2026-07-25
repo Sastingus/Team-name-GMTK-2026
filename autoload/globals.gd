@@ -70,9 +70,10 @@ func replace(parent,replacement_object):
 			parent.queue_free()
 
 func send_food(food):
-	sent_food.append(food)
-	if sent_food.size() >= RECIPE_COUNT:
-		win()
+	if not sent_food.has(food):
+		sent_food.append(food)
+		if sent_food.size() >= RECIPE_COUNT:
+			win()
 
 func win():
 	in_game = false

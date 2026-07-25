@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_7jw6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pjeb"]
-size = Vector2(105.000015, 148.99998)
+size = Vector2(105.000015, 164.11615)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pjeb"]
 atlas = ExtResource("1_5slq1")
@@ -61,7 +61,7 @@ station = 6
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=973312508]
-position = Vector2(-1.5000038, -14.499996)
+position = Vector2(-1.5000044, -10.831275)
 rotation = -3.1415925
 scale = Vector2(0.48540342, 0.48540342)
 shape = SubResource("RectangleShape2D_3pjeb")

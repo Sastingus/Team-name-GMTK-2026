@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dugpytv46gswh"]
+
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="1_dknf1"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="2_r2isn"]
+[ext_resource type="Script" uid="uid://dnkji1xxip324" path="res://scenes/components/microwaveable_component.gd" id="3_rbamw"]
+[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="4_87pl5"]
+[ext_resource type="PackedScene" uid="uid://btq38v130hwa5" path="res://scenes/ingredients/corn/cooked_corn.tscn" id="4_rbamw"]
+[ext_resource type="PackedScene" uid="uid://fak4u35qplwo" path="res://scenes/ingredients/corn/burnt_corn.tscn" id="5_87pl5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
+radius = 38.013157
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wae1k"]
+atlas = ExtResource("4_87pl5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ccvt3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wae1k")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bi3u6"]
+radius = 7.973889
+height = 38.76973
+
+[node name="Cut_Corn" type="RigidBody2D" unique_id=1213985600]
+
+[node name="GrabComponent" type="Node2D" parent="." unique_id=1534589526 node_paths=PackedStringArray("grab_area", "parent")]
+script = ExtResource("1_dknf1")
+grab_area = NodePath("../Area2D")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://dx8leo388mpyq"
+
+[node name="Ingredient_Component" type="Node" parent="." unique_id=1945884771 node_paths=PackedStringArray("parent", "label", "grab_component")]
+script = ExtResource("2_r2isn")
+parent = NodePath("..")
+label = NodePath("../Label")
+item_name = "Corn"
+effects_list = Array[int]([0])
+grab_component = NodePath("../GrabComponent")
+metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
+
+[node name="Microwaveable_Component" type="Node" parent="." unique_id=1054142064 node_paths=PackedStringArray("parent")]
+script = ExtResource("3_rbamw")
+parent = NodePath("..")
+target_heat = 150
+replacement_object = ExtResource("4_rbamw")
+burnt_replacement_object = ExtResource("5_87pl5")
+metadata/_custom_type_script = "uid://dnkji1xxip324"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1609873041]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1961634614]
+shape = SubResource("CircleShape2D_1gpru")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749977998]
+position = Vector2(2, -1.1920929e-07)
+scale = Vector2(3.304, 3.304)
+sprite_frames = SubResource("SpriteFrames_ccvt3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1803970261]
+position = Vector2(1, 0)
+rotation = 1.3594782
+scale = Vector2(1.4696236, 1.4696236)
+shape = SubResource("CapsuleShape2D_bi3u6")
+
+[node name="Label" type="Label" parent="." unique_id=767279785]
+top_level = true
+offset_left = -26.0
+offset_top = -112.0
+offset_right = 31.0
+offset_bottom = -26.0
+horizontal_alignment = 1
+vertical_alignment = 1
