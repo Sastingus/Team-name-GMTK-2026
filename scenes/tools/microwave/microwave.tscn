@@ -76,7 +76,6 @@ shape = SubResource("RectangleShape2D_bii8u")
 disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1969686714]
-z_index = -1
 offset_left = 111.0
 offset_top = -28.0
 offset_right = 147.0
@@ -125,6 +124,14 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_6nrx0")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_agpiq")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6s3ad")
 toggle_mode = true
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=2130759891]
+z_index = -1
+offset_left = 102.0
+offset_top = -36.0
+offset_right = 156.0
+offset_bottom = 72.0
+color = Color(0.19076243, 0.19076228, 0.19076234, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://f1j8e05t3gcv"]
+
+[ext_resource type="Script" uid="uid://d4gp5lidt8a1r" path="res://scenes/ingredients/infinite_source/infinite_source.gd" id="1_58ks7"]
+
+[node name="InfiniteSource" type="Area2D" unique_id=1837830928]
+script = ExtResource("1_58ks7")

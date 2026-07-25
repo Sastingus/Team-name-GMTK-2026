@@ -13,6 +13,8 @@ var tracked_velocity := Vector2.ZERO
 var hovering := false
 var grabbing := false
 
+var lastknownposition = Vector2(0, 0)
+
 func _ready() -> void:
 	SignalBus.click.connect(grab)
 	grab_area.mouse_entered.connect(hover)
@@ -37,10 +39,14 @@ func _process(delta: float) -> void:
 		parent.freeze = true
 		parent.global_position = get_global_mouse_position()
 	if not Globals.mouse_down && grabbing:
-		parent.freeze = false
-		parent.linear_velocity = tracked_velocity
-	if not Globals.mouse_down:
-		grabbing = false
+		if Globals.current_station != Globals.Stations.KITCHEN:
+			parent.global_position = get_global_mouse_position()
+			parent.freeze = false
+			parent.linear_velocity = tracked_velocity
+			grabbing = false
+		else:
+			parent.freeze = true
+			parent.global_position = get_global_mouse_position()
 
 
 func grab():
@@ -52,3 +58,11 @@ func hover():
 
 func stop_hovering():
 	hovering = false
+
+func last_known_position():
+	if grabbing == false:
+		lastknownposition = get_global_mouse_position()
+	if $GrabComponent.position.y >= 324:
+		$GrabComponent.position.y = lastknownposition.y
+		$GrabComponent.position.x = lastknownposition.x
+	print(str($GrabComponent.position.y))
