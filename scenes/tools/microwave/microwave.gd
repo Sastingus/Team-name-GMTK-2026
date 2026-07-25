@@ -9,7 +9,7 @@ var microwave_opened := false
 const HEAT_PER_SECOND = 100
 const DOOR_MOVE_DISTANCE = 200
 const BURNT_HEAT = 100
-@onready var temp_heat_label: Label = $temp_HeatLabel
+@onready var heat_label: Label = $ColorRect/HeatLabel
 @onready var door_button: Button = $DoorButton
 @onready var microwave_floor: CollisionShape2D = $StaticBody2D/MicrowaveFloor
 
@@ -17,7 +17,7 @@ const BURNT_HEAT = 100
 func _process(delta: float) -> void:
 	if get_microwaveable():
 		current_temp += HEAT_PER_SECOND * delta
-	temp_heat_label.text = "current temp = "+str(round(current_temp))
+	heat_label.text = str(round(current_temp))+"°"
 	if microwave_started:
 		door_button.disabled = true
 	else:
@@ -56,12 +56,14 @@ func _on_door_button_toggled(toggled_on: bool) -> void:
 	microwave_opened = toggled_on
 	if not microwave_started:
 		if microwave_opened:
-			door_button.position -= Vector2(DOOR_MOVE_DISTANCE,0)
+			door_button.modulate = Color(0.0, 0.0, 0.0, 1)
+			door_button.position -= Vector2(door_button.size.x,0)
 			microwave_floor.disabled = false
 			door_button.z_index = -1
 			recalculate_target()
 		else:
-			door_button.position += Vector2(DOOR_MOVE_DISTANCE,0)
+			door_button.modulate = Color(1.0, 1.0, 1.0, 0.7)
+			door_button.position += Vector2(door_button.size.x,0)
 			if current_target == null:
 				microwave_floor.disabled = true
 				door_button.z_index = -1

@@ -1,74 +1,128 @@
 [gd_scene format=3 uid="uid://b5gebj45i87sl"]
 
 [ext_resource type="Script" uid="uid://c78ihvhqts5sy" path="res://scenes/tools/microwave/microwave.gd" id="1_6s3ad"]
+[ext_resource type="Texture2D" uid="uid://dwjbn17x3xyne" path="res://assets/Sprite-0002.png" id="2_bii8u"]
+[ext_resource type="Texture2D" uid="uid://dyfimsfq2ofax" path="res://assets/microwave-button-normal.png" id="3_agpiq"]
+[ext_resource type="Texture2D" uid="uid://22kxqkofodir" path="res://assets/microwave-button-pressed.png" id="4_u56pr"]
+[ext_resource type="Texture2D" uid="uid://b3fn3qy2r4v6l" path="res://assets/Sprite-0001.png" id="5_cvttr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0x0j"]
+atlas = ExtResource("2_bii8u")
+region = Rect2(0, 128, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0onbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0x0j")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6s3ad"]
-size = Vector2(164, 125)
+size = Vector2(173, 105)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bii8u"]
-size = Vector2(179.5, 20)
+size = Vector2(173, 15)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s3ad"]
-bg_color = Color(0.6156863, 0.68235296, 0.07450981, 0.7607843)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u56pr"]
+texture = ExtResource("3_agpiq")
+texture_margin_top = 4.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cvttr"]
+texture = ExtResource("4_u56pr")
+
+[sub_resource type="Theme" id="Theme_agpiq"]
+Button/styles/hover = SubResource("StyleBoxTexture_u56pr")
+Button/styles/normal = SubResource("StyleBoxTexture_u56pr")
+Button/styles/pressed = SubResource("StyleBoxTexture_cvttr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6nrx0"]
+texture = ExtResource("5_cvttr")
+expand_margin_left = 17.0
+expand_margin_bottom = 11.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agpiq"]
+texture = ExtResource("5_cvttr")
+expand_margin_left = 17.0
+expand_margin_bottom = 11.0
+modulate_color = Color(1, 1, 0.19215687, 0.57254905)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6s3ad"]
 
 [node name="Microwave" type="Area2D" unique_id=102243551]
 script = ExtResource("1_6s3ad")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1050787794]
+z_index = -1
+position = Vector2(84, 0)
+scale = Vector2(1.4926465, 1.4926465)
+sprite_frames = SubResource("SpriteFrames_0onbk")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=898840610]
-position = Vector2(0, -1.5)
+visible = false
+position = Vector2(3.5, 16.5)
 shape = SubResource("RectangleShape2D_6s3ad")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2100182432]
-z_index = -1
-position = Vector2(-71.43532, -15)
-scale = Vector2(0.6494215, 0.8460174)
-color = Color(0.20033002, 0.20033002, 0.20032999, 1)
-polygon = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 413.34528, -89.832664, 414.88513, 134.749)
-uv = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 414.3338, -89.46701, 421.67078, 126.133644)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=580010265]
+visible = false
 
 [node name="MicrowaveFloor" type="CollisionShape2D" parent="StaticBody2D" unique_id=996124147]
-position = Vector2(0.25, 80)
+position = Vector2(3.5, 76.5)
 shape = SubResource("RectangleShape2D_bii8u")
 disabled = true
 
-[node name="temp_HeatLabel" type="Label" parent="." unique_id=1128901564]
-offset_left = 96.0
-offset_top = -73.0
-offset_right = 189.0
-offset_bottom = -50.0
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1969686714]
+z_index = -1
+offset_left = 111.0
+offset_top = -28.0
+offset_right = 147.0
+offset_bottom = -7.0
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[node name="HeatLabel" type="Label" parent="ColorRect" unique_id=1128901564]
+modulate = Color(1.6364455e-06, 0.69717866, 0.69735605, 1)
+z_index = 1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 30.0
+offset_bottom = 15.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 10
-text = "current temp = 350"
+text = "350.0°"
+horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="." unique_id=1989218956]
-offset_left = 115.0
-offset_top = -45.0
-offset_right = 161.0
-offset_bottom = -14.0
+offset_left = 106.0
+offset_top = -1.0
+offset_right = 152.0
+offset_bottom = 19.0
+theme = SubResource("Theme_agpiq")
 text = "Start"
 
 [node name="StopButton" type="Button" parent="." unique_id=1314635175]
-offset_left = 116.0
-offset_top = 6.0
-offset_right = 162.0
-offset_bottom = 37.0
+offset_left = 106.0
+offset_top = 32.0
+offset_right = 152.0
+offset_bottom = 52.0
+theme = SubResource("Theme_agpiq")
 text = "Stop"
 
 [node name="DoorButton" type="Button" parent="." unique_id=2126527489]
+modulate = Color(1, 1, 1, 0.78431374)
 z_index = -1
-offset_left = -91.0
-offset_top = -73.0
-offset_right = 92.0
-offset_bottom = 69.0
-theme_override_styles/disabled = SubResource("StyleBoxFlat_6s3ad")
+offset_left = -83.0
+offset_top = -36.0
+offset_right = 90.0
+offset_bottom = 70.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_6nrx0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6nrx0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6nrx0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_agpiq")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6s3ad")
 toggle_mode = true
 

@@ -247,7 +247,7 @@ station_id = 4
 position = Vector2(-376, 178)
 
 [node name="Egg" parent="MicrowaveStation" unique_id=1213985600 instance=ExtResource("6_xaid1")]
-position = Vector2(383, 220)
+position = Vector2(384, 220)
 
 [node name="KnifeStation" parent="." unique_id=1073761248 instance=ExtResource("1_sqeqr")]
 position = Vector2(2824, -1359)

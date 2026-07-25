@@ -24,7 +24,7 @@ func lose():
 
 func _on_restart_button_pressed() -> void:
 	Globals._ready()
-	get_tree().change_scene_to_packed(preload("res://scenes/worlds/main_menu.tscn"))
+	get_tree().change_scene_to_packed(load("res://scenes/worlds/main_menu.tscn"))
 	
 
 func music_player():

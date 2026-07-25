@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4fg5ks6px2aa"]
 
-[ext_resource type="Texture2D" uid="uid://cb6vlcd35ghgu" path="res://assets/Sprite-0008.png" id="1_5rpsg"]
+[ext_resource type="Texture2D" uid="uid://b4686dfjtaoin" path="res://assets/Sprite-0008.png" id="1_5rpsg"]
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_5m1ey"]
 [ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="3_5rpsg"]
 
@@ -11,15 +11,15 @@ height = 59.792248
 [sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
 radius = 47.853943
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5pqij"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rpsg"]
 atlas = ExtResource("1_5rpsg")
-region = Rect2(192, 192, 64, 64)
+region = Rect2(48, 48, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r87m8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5pqij")
+"texture": SubResource("AtlasTexture_5rpsg")
 }],
 "loop": 1,
 "name": &"new_animation",
@@ -39,6 +39,8 @@ shape = SubResource("CircleShape2D_1gpru")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749977998]
 modulate = Color(0.60662574, 0.60662585, 0.6066258, 1)
+position = Vector2(2, -2)
+scale = Vector2(3.781, 3.781)
 sprite_frames = SubResource("SpriteFrames_r87m8")
 animation = &"new_animation"
 
