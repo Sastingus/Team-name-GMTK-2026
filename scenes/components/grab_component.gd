@@ -13,6 +13,8 @@ var tracked_velocity := Vector2.ZERO
 var hovering := false
 var grabbing := false
 
+var lastknownposition = Vector2(0, 0)
+
 func _ready() -> void:
 	SignalBus.click.connect(grab)
 	grab_area.mouse_entered.connect(hover)
@@ -52,3 +54,11 @@ func hover():
 
 func stop_hovering():
 	hovering = false
+
+func last_known_position():
+	if grabbing == false:
+		lastknownposition = get_global_mouse_position()
+	if $GrabComponent.position.y >= 324:
+		$GrabComponent.position.y = lastknownposition.y
+		$GrabComponent.position.x = lastknownposition.x
+	print(str($GrabComponent.position.y))

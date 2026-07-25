@@ -38,6 +38,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):
 		mouse_down = true
 		SignalBus.click.emit()
+		
 	if Input.is_action_just_released("click"):
 		mouse_down = false
 		SignalBus.release.emit()

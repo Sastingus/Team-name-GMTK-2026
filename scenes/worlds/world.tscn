@@ -50,6 +50,12 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_n71ak")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4fke"]
+size = Vector2(118.09531, 429.5636)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smwsn"]
+size = Vector2(541.34924, 80.873)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3k0i1"]
 size = Vector2(324, 1278)
 
@@ -275,6 +281,28 @@ z_index = -2
 scale = Vector2(2.52, 2.52)
 tile_map_data = PackedByteArray("AAD/////AAAAAAEAAAD//wAAAAAFAAIAAAD//wEAAAAFAAMAAAD///7/AAACAAAAAAAAAAAAAAACAAEAAAABAAAAAAAEAAIAAAACAAAAAAADAAIAAAADAAAAAAAFAAIAAAD+/wAAAAABAAEAAAD9/wAAAAAAAAIAAAD8/wAAAAAFAAIAAAADAAEAAAAFAAMAAAACAAEAAAAFAAMAAAABAAEAAAAFAAMAAAAAAAEAAAAFAAMAAAD+/wEAAAAFAAMAAAD9/wEAAAAFAAMAAAD8/wEAAAAFAAMAAAAAAP7/AAACAAAAAAABAP7/AAACAAAAAAACAP7/AAACAAAAAAD9//7/AAAAAAAAAAD+//7/AAAEAAAAAAD8////AAAAAAEAAAD9////AAAAAAEAAAD+////AAAAAAEAAAABAP//AAAAAAEAAAACAP//AAAAAAEAAAADAP//AAAAAAEAAAADAP7/AAACAAAAAAD8//7/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_dld88")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="KitchenStation/Background" unique_id=878668546]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/Background/StaticBody2D" unique_id=357428493]
+position = Vector2(313.0952, 2.7777777)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_t4fke")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KitchenStation/Background/StaticBody2D" unique_id=301654703]
+position = Vector2(-314.6825, 3.1746037)
+scale = Vector2(0.9999996, 0.9999996)
+shape = SubResource("RectangleShape2D_t4fke")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="KitchenStation/Background/StaticBody2D" unique_id=1613433008]
+position = Vector2(-5.1587286, 173.41269)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_smwsn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="KitchenStation/Background/StaticBody2D" unique_id=1834049277]
+position = Vector2(3.1746037, -170.6349)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_smwsn")
 
 [node name="MicrowaveStation" parent="." unique_id=1889921677 instance=ExtResource("1_sqeqr")]
 position = Vector2(3, -1359)
