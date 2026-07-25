@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://bu8nk1sjrv7xg" path="res://assets/GrapeSoda.ttf" id="3_v0ctj"]
 [ext_resource type="Texture2D" uid="uid://co5aplhdcab5j" path="res://assets/team-name-logo.png" id="5_jixok"]
 [ext_resource type="AudioStream" uid="uid://beec1sm6jcqn0" path="res://assets/music/MenuA.mp3" id="6_oa4j6"]
+[ext_resource type="PackedScene" uid="uid://dvnngx1t1ppdt" path="res://scenes/stations/station.tscn" id="7_saku1"]
+[ext_resource type="PackedScene" uid="uid://c0p77y6hukof" path="res://scenes/tools/recipe_card/recipe_card.tscn" id="8_byytg"]
 
 [sub_resource type="Theme" id="Theme_1b5k1"]
 default_font = ExtResource("3_v0ctj")
@@ -89,6 +91,9 @@ animations = [{
 [node name="main menu" type="Node2D" unique_id=1026310068]
 script = ExtResource("1_v0ctj")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1523989823]
+position = Vector2(575.32, 323.81)
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1476808874]
 offset_left = -8.0
 offset_top = -8.0
@@ -120,6 +125,11 @@ text = "Start"
 layout_mode = 2
 theme = ExtResource("3_jixok")
 text = "Quit"
+
+[node name="Recipes" type="Button" parent="Control/VBoxContainer" unique_id=145994486]
+layout_mode = 2
+theme = ExtResource("3_jixok")
+text = "Recipes"
 
 [node name="Label" type="Label" parent="Control" unique_id=1887727985]
 z_index = 1
@@ -157,5 +167,109 @@ stream = ExtResource("6_oa4j6")
 autoplay = true
 parameters/looping = true
 
+[node name="RecipeStation" parent="." unique_id=1350042118 instance=ExtResource("7_saku1")]
+visible = false
+z_index = 10
+position = Vector2(577, 315)
+station_id = 2
+
+[node name="ColorRect" type="ColorRect" parent="RecipeStation" unique_id=1577758817]
+offset_left = -651.0
+offset_top = 256.0
+offset_right = 647.0
+offset_bottom = 360.0
+color = Color(0.27058825, 0.15686275, 0.23529412, 1)
+
+[node name="Line2D" type="Line2D" parent="RecipeStation" unique_id=497461187]
+position = Vector2(-91, -112)
+points = PackedVector2Array(-495, -180, -92, -59, 102, -37, 316, -60, 687, -180)
+width = 7.0
+default_color = Color(0.42745098, 0.30588236, 0.14117648, 1)
+
+[node name="NextButton" type="Button" parent="RecipeStation" unique_id=859947699]
+offset_left = 210.0
+offset_top = -8.0
+offset_right = 277.0
+offset_bottom = 16.0
+theme = ExtResource("3_jixok")
+text = "Next"
+
+[node name="BackButton" type="Button" parent="RecipeStation" unique_id=900634247]
+offset_left = -251.0
+offset_top = -8.0
+offset_right = -184.0
+offset_bottom = 16.0
+theme = ExtResource("3_jixok")
+text = "Back"
+
+[node name="TurkeyRecipeCard2" parent="RecipeStation" unique_id=1490860633 instance=ExtResource("8_byytg")]
+position = Vector2(-146, -120)
+recipe_name = "Turkey"
+recipe_description = "1. Cook until 350°
+2. Plate and serve  "
+
+[node name="StuffingRecipeCard" parent="RecipeStation" unique_id=1941201644 instance=ExtResource("8_byytg")]
+position = Vector2(-146, -120)
+recipe_name = "Stuffing"
+recipe_description = "1. Cut the stuffing out of the can
+2. Cook until 250°
+3. Plate and serve"
+id = 2
+
+[node name="CornRecipeCard" parent="RecipeStation" unique_id=975297918 instance=ExtResource("8_byytg")]
+position = Vector2(-146, -120)
+recipe_name = "Corn on the Cob"
+recipe_description = "1. Cut husk off
+2. Cook until 150°
+3. Plate and serve"
+id = 3
+
+[node name="PumpkinPieRecipeCard" parent="RecipeStation" unique_id=1581448039 instance=ExtResource("8_byytg")]
+position = Vector2(-146, -120)
+recipe_name = "Pumpkin Pie"
+recipe_description = "1. Cut pumpkin into bits
+2. Put pumpkin bits into crust
+3. Cook raw pumpkin pie until 250°
+4. Plate and serve"
+id = 4
+
+[node name="CranberryRecipeCard" parent="RecipeStation" unique_id=1705074228 instance=ExtResource("8_byytg")]
+position = Vector2(-146, -120)
+recipe_name = "Cranberry Sauce"
+recipe_description = "1. Cut the sauce out of the can
+2. Cook until 150°
+3. Plate and serve"
+id = 5
+
+[node name="DeviledEggRecipeCard" parent="RecipeStation" unique_id=952390098 instance=ExtResource("8_byytg")]
+position = Vector2(-146, -120)
+recipe_name = "Deviled Eggs"
+recipe_description = "1. Cook egg until 150°
+2. Cut the egg in half
+3. Season the egg
+4. Plate and serve"
+id = 6
+
+[node name="MashedPotatoesRecipeCard" parent="RecipeStation" unique_id=2053953426 instance=ExtResource("8_byytg")]
+position = Vector2(-146, -120)
+recipe_name = "Mashed Potatoes"
+recipe_description = "1. Cut potato into bits
+2. Cook bits until 200°
+3. Season mash with pepper
+4. Plate and serve"
+id = 7
+
+[node name="Recipes" type="Button" parent="RecipeStation" unique_id=599424043]
+offset_left = 332.0
+offset_top = 221.0
+offset_right = 497.0
+offset_bottom = 243.0
+theme = ExtResource("3_jixok")
+text = "Back to main menu"
+
 [connection signal="pressed" from="Control/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Recipes" to="." method="_on_recipes_pressed"]
+[connection signal="pressed" from="RecipeStation/NextButton" to="RecipeStation/TurkeyRecipeCard2" method="next_recipe"]
+[connection signal="pressed" from="RecipeStation/BackButton" to="RecipeStation/TurkeyRecipeCard2" method="back_recipe"]
+[connection signal="pressed" from="RecipeStation/Recipes" to="." method="back_to_menu"]

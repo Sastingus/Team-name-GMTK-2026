@@ -6,7 +6,7 @@ var mouse_velocity := Vector2.ZERO
 const THROW_STRENGTH = 0.5
 
 var sent_food := []
-const RECIPE_COUNT = 1
+const RECIPE_COUNT = 7
 
 var current_recipe := 1
 
