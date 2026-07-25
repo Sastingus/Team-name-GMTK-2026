@@ -9,10 +9,16 @@ extends Node2D
 func _process(delta: float) -> void:
 	timer_label.text = str(round(Globals.game_timer*10)/10)
 	music_player()
+	if round(Globals.game_timer*10)/10 == 30.38:
+		fade_out()
+	if round(Globals.game_timer*10)/10 == 30:
+		fade_in()
 
 func _ready() -> void:
 	SignalBus.lose.connect(lose)
 	SignalBus.win.connect(win)
+	SignalBus.fade_in.connect(fade_in)
+	SignalBus.fade_out.connect(fade_out)
 
 func win():
 	win_label.visible = true
@@ -35,12 +41,11 @@ func music_player():
 			audio_stream_player.stream = preload("res://assets/music/SONG3BS2WT.mp3")
 			audio_stream_player.play()
 			
+
+func fade_out():
 	var tween = get_tree().create_tween()
-	var tweens = get_tree().create_tween()
-		
-	if not Globals.game_timer >= 35 and $AudioStreamPlayer.volume_db != -30:
-		tween.tween_property($AudioStreamPlayer, "volume_db", -30, 3.0)
-		
-	if Globals.game_timer <= 31:
-		tweens.tween_property($AudioStreamPlayer, "volume_db", 20, 2.0)
-		
+	tween.tween_property(audio_stream_player,"volume_db",-30,0.25)
+
+func fade_in():
+	var tween = get_tree().create_tween()
+	tween.tween_property(audio_stream_player,"volume_db",0,0.25)

@@ -10,7 +10,7 @@ const RECIPE_COUNT = 1
 
 var in_game := false
 var game_timer := 0.0
-const GAME_TIME = 60
+const GAME_TIME = 32
 
 var current_station : Stations = Stations.KITCHEN
 

@@ -9,3 +9,6 @@ signal switch_station(station : Globals.Stations)
 
 signal lose
 signal win
+
+signal fade_out
+signal fade_in
