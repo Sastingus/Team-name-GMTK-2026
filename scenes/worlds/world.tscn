@@ -15,6 +15,7 @@
 [ext_resource type="Theme" uid="uid://bfti8v7mjvobe" path="res://assets/button_theme.tres" id="10_vx1ig"]
 [ext_resource type="PackedScene" uid="uid://f1j8e05t3gcv" path="res://scenes/ingredients/infinite_source/infinite_source.tscn" id="11_thq3p"]
 [ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="13_3k0i1"]
+[ext_resource type="PackedScene" uid="uid://c0p77y6hukof" path="res://scenes/tools/recipe_card/recipe_card.tscn" id="14_svvlm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
@@ -47,6 +48,7 @@ texture_region_size = Vector2i(64, 64)
 1:1/0 = 0
 1:1/0/texture_origin = Vector2i(0, 32)
 4:0/0 = 0
+3:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_dld88"]
 tile_size = Vector2i(64, 64)
@@ -241,6 +243,24 @@ theme_override_fonts/font = ExtResource("4_n71ak")
 theme_override_font_sizes/font_size = 23
 text = "Microwave"
 
+[node name="RecipeStationSwitcher" type="Area2D" parent="KitchenStation" unique_id=44284360]
+position = Vector2(-377, -87)
+script = ExtResource("3_vpaal")
+station = 2
+metadata/_custom_type_script = "uid://hqeekx3bwp31"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/RecipeStationSwitcher" unique_id=404305280]
+position = Vector2(-25.5, -19)
+shape = SubResource("RectangleShape2D_0qnlt")
+
+[node name="Label" type="Label" parent="KitchenStation/RecipeStationSwitcher" unique_id=1039793959]
+offset_left = -57.0
+offset_right = 28.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("4_n71ak")
+theme_override_font_sizes/font_size = 23
+text = "Recipe"
+
 [node name="ShelfStation" type="Area2D" parent="KitchenStation" unique_id=473796137]
 position = Vector2(-222, -208)
 script = ExtResource("3_vpaal")
@@ -252,10 +272,10 @@ position = Vector2(-100.5, -33.5)
 shape = SubResource("RectangleShape2D_n71ak")
 
 [node name="Label" type="Label" parent="KitchenStation/ShelfStation" unique_id=1379458594]
-offset_left = -127.0
-offset_top = 48.0
-offset_right = -42.0
-offset_bottom = 72.0
+offset_left = -207.0
+offset_top = -117.0
+offset_right = -122.0
+offset_bottom = -93.0
 theme_override_fonts/font = ExtResource("4_n71ak")
 theme_override_font_sizes/font_size = 23
 text = "Shelf"
@@ -301,7 +321,7 @@ text = "Plating"
 [node name="Background" type="TileMapLayer" parent="KitchenStation" unique_id=62442441]
 z_index = -2
 scale = Vector2(2.52, 2.52)
-tile_map_data = PackedByteArray("AAD/////AAAAAAEAAAD//wAAAAAFAAIAAAD//wEAAAAFAAMAAAD///7/AAACAAAAAAAAAAAAAAACAAEAAAABAAAAAAAEAAIAAAACAAAAAAADAAIAAAADAAAAAAAFAAIAAAD+/wAAAAABAAEAAAD9/wAAAAAAAAIAAAD8/wAAAAAFAAIAAAADAAEAAAAFAAMAAAACAAEAAAAFAAMAAAABAAEAAAAFAAMAAAAAAAEAAAAFAAMAAAD+/wEAAAAFAAMAAAD9/wEAAAAFAAMAAAD8/wEAAAAFAAMAAAAAAP7/AAACAAAAAAABAP7/AAACAAAAAAACAP7/AAACAAAAAAD9//7/AAAAAAAAAAD+//7/AAAEAAAAAAD8////AAAAAAEAAAD9////AAAAAAEAAAD+////AAAAAAEAAAABAP//AAAAAAEAAAACAP//AAAAAAEAAAADAP//AAAAAAEAAAADAP7/AAACAAAAAAD8//7/AAACAAAAAAA=")
+tile_map_data = PackedByteArray("AAD/////AAADAAEAAAD//wAAAAAFAAIAAAD//wEAAAAFAAMAAAD///7/AAACAAAAAAAAAAAAAAACAAEAAAABAAAAAAAEAAIAAAACAAAAAAADAAIAAAADAAAAAAAFAAIAAAD+/wAAAAABAAEAAAD9/wAAAAAAAAIAAAD8/wAAAAAFAAIAAAADAAEAAAAFAAMAAAACAAEAAAAFAAMAAAABAAEAAAAFAAMAAAAAAAEAAAAFAAMAAAD+/wEAAAAFAAMAAAD9/wEAAAAFAAMAAAD8/wEAAAAFAAMAAAAAAP7/AAACAAAAAAABAP7/AAACAAAAAAACAP7/AAACAAAAAAD9//7/AAAAAAAAAAD+//7/AAAEAAAAAAD8////AAADAAEAAAD9////AAAAAAEAAAD+////AAAAAAEAAAABAP//AAADAAEAAAACAP//AAADAAEAAAADAP//AAADAAEAAAADAP7/AAACAAAAAAD8//7/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_dld88")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="KitchenStation/Background" unique_id=878668546]
@@ -486,6 +506,97 @@ position = Vector2(41, 4)
 scale = Vector2(7.5, 7.5)
 sprite_frames = SubResource("SpriteFrames_1gpru")
 
+[node name="RecipeStation" parent="." unique_id=1607371014 instance=ExtResource("1_sqeqr")]
+z_index = -1
+position = Vector2(-2420, 252)
+station_id = 2
+
+[node name="ColorRect" type="ColorRect" parent="RecipeStation" unique_id=1680809034]
+offset_left = -651.0
+offset_top = 256.0
+offset_right = 647.0
+offset_bottom = 360.0
+color = Color(0.27058825, 0.15686275, 0.23529412, 1)
+
+[node name="Line2D" type="Line2D" parent="RecipeStation" unique_id=608403395]
+position = Vector2(-91, -112)
+points = PackedVector2Array(-495, -180, -92, -59, 102, -37, 316, -60, 687, -180)
+width = 7.0
+default_color = Color(0.42745098, 0.30588236, 0.14117648, 1)
+
+[node name="NextButton" type="Button" parent="RecipeStation" unique_id=2090745225]
+offset_left = 210.0
+offset_top = -8.0
+offset_right = 277.0
+offset_bottom = 16.0
+theme = ExtResource("10_vx1ig")
+text = "Next"
+
+[node name="BackButton" type="Button" parent="RecipeStation" unique_id=894639683]
+offset_left = -251.0
+offset_top = -8.0
+offset_right = -184.0
+offset_bottom = 16.0
+theme = ExtResource("10_vx1ig")
+text = "Back"
+
+[node name="TurkeyRecipeCard2" parent="RecipeStation" unique_id=1490860633 instance=ExtResource("14_svvlm")]
+position = Vector2(-146, -120)
+recipe_name = "Turkey"
+recipe_description = "1. Cook until 350°
+2. Plate and serve  "
+
+[node name="StuffingRecipeCard" parent="RecipeStation" unique_id=200537568 instance=ExtResource("14_svvlm")]
+position = Vector2(-146, -120)
+recipe_name = "Stuffing"
+recipe_description = "1. Cut the stuffing out of the can
+2. Cook until 250°
+3. Plate and serve"
+id = 2
+
+[node name="CornRecipeCard" parent="RecipeStation" unique_id=2018000100 instance=ExtResource("14_svvlm")]
+position = Vector2(-146, -120)
+recipe_name = "Corn on the Cob"
+recipe_description = "1. Cut husk off
+2. Cook until 150°
+3. Plate and serve"
+id = 3
+
+[node name="PumpkinPieRecipeCard" parent="RecipeStation" unique_id=2054356110 instance=ExtResource("14_svvlm")]
+position = Vector2(-146, -120)
+recipe_name = "Pumpkin Pie"
+recipe_description = "1. Cut pumpkin into bits
+2. Put pumpkin bits into crust
+3. Cook raw pumpkin pie until 250°
+4. Plate and serve"
+id = 4
+
+[node name="CranberryRecipeCard" parent="RecipeStation" unique_id=1139960400 instance=ExtResource("14_svvlm")]
+position = Vector2(-146, -120)
+recipe_name = "Cranberry Sauce"
+recipe_description = "1. Cut the sauce out of the can
+2. Cook until 150°
+3. Plate and serve"
+id = 5
+
+[node name="DeviledEggRecipeCard" parent="RecipeStation" unique_id=395069267 instance=ExtResource("14_svvlm")]
+position = Vector2(-146, -120)
+recipe_name = "Deviled Eggs"
+recipe_description = "1. Cook egg until 150°
+2. Cut the egg in half
+3. Season the egg
+4. Plate and serve"
+id = 6
+
+[node name="MashedPotatoesRecipeCard" parent="RecipeStation" unique_id=1261167184 instance=ExtResource("14_svvlm")]
+position = Vector2(-146, -120)
+recipe_name = "Mashed Potatoes"
+recipe_description = "1. Cut potato into bits
+2. Cook bits until 200°
+3. Season mash with pepper
+4. Plate and serve"
+id = 7
+
 [node name="Ui" type="CanvasLayer" parent="." unique_id=725376548]
 process_mode = 3
 layer = 5
@@ -559,5 +670,7 @@ text = "Back to main menu"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=451020778]
 autoplay = true
 
+[connection signal="pressed" from="RecipeStation/NextButton" to="RecipeStation/DeviledEggRecipeCard" method="next_recipe"]
+[connection signal="pressed" from="RecipeStation/BackButton" to="RecipeStation/DeviledEggRecipeCard" method="back_recipe"]
 [connection signal="pressed" from="Ui/LoseLabel/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Ui/WinLabel/RestartButton" to="." method="_on_restart_button_pressed"]

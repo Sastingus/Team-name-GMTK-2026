@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c0p77y6hukof"]
+
+[ext_resource type="Script" uid="uid://crmlb47ima1xa" path="res://scenes/tools/recipe_card/recipe_card.gd" id="1_onao4"]
+
+[node name="RecipeCard" type="Node2D" unique_id=1490860633]
+script = ExtResource("1_onao4")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1851406150]
+offset_right = 316.0
+offset_bottom = 357.0
+color = Color(0.88256127, 0.88792044, 0.7836972, 1)
+
+[node name="Clip" type="ColorRect" parent="." unique_id=451509272]
+offset_left = 142.0
+offset_top = -56.0
+offset_right = 174.0
+offset_bottom = 21.0
+color = Color(0.40783572, 0.33450538, 0.16435406, 1)
+
+[node name="NameLabel" type="Label" parent="." unique_id=76091541]
+offset_left = 46.0
+offset_top = 40.0
+offset_right = 272.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "Recipe"
+horizontal_alignment = 1
+
+[node name="NameLine" type="ColorRect" parent="NameLabel" unique_id=1529255781]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 37.0
+offset_right = 221.0
+offset_bottom = 39.0
+color = Color(0, 0, 0, 1)
+
+[node name="IdLabel" type="Label" parent="." unique_id=1341343802]
+offset_left = 254.0
+offset_top = 15.0
+offset_right = 296.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "1."
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="." unique_id=2078632730]
+custom_maximum_size = Vector2(221, 219)
+offset_left = 46.0
+offset_top = 90.0
+offset_right = 267.0
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "1. Cook until 350°
+2. Plate and serve"
+horizontal_alignment = 1
+autowrap_mode = 3
