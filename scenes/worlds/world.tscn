@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bui68jasparpc" path="res://scenes/tools/Plate/plate.tscn" id="9_i30uk"]
 [ext_resource type="Texture2D" uid="uid://b1ncux0uqfrdd" path="res://assets/explosion.png" id="10_rbjkb"]
 [ext_resource type="Theme" uid="uid://bfti8v7mjvobe" path="res://assets/button_theme.tres" id="10_vx1ig"]
+[ext_resource type="PackedScene" uid="uid://gvcoeu7im0tu" path="res://scenes/ingredients/turkey.tscn" id="12_thq3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
@@ -422,6 +423,9 @@ color = Color(0.13333334, 0.1254902, 0.20392157, 1)
 
 [node name="Egg" parent="ShelfStation" unique_id=1213985600 instance=ExtResource("6_xaid1")]
 position = Vector2(-2900, -1525)
+
+[node name="Turkey" parent="ShelfStation" unique_id=668412045 instance=ExtResource("12_thq3p")]
+position = Vector2(-2110, -1305)
 
 [node name="Ui" type="CanvasLayer" parent="." unique_id=725376548]
 layer = 5
