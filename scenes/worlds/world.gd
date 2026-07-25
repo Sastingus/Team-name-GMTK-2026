@@ -21,19 +21,26 @@ func lose():
 	lose_label.visible = true
 	explosion.play("default")
 
-
 func _on_restart_button_pressed() -> void:
 	Globals._ready()
 	get_tree().change_scene_to_packed(preload("res://scenes/worlds/main_menu.tscn"))
 	
 func music_player():
-	
 	if Globals.game_timer >= 30:
-		if not audio_stream_player.stream == load("res://assets/mUSIC/A-Song.mp3"):
-			audio_stream_player.stream = preload("res://assets/mUSIC/A-Song.mp3")
+		if not audio_stream_player.stream == load("res://assets/music/A-Song.mp3"):
+			audio_stream_player.stream = preload("res://assets/music/A-Song.mp3")
 			audio_stream_player.play()
 	else:
-		if not audio_stream_player.stream == load("res://assets/mUSIC/SONG3BS2WT.mp3"):
-			audio_stream_player.stream = preload("res://assets/mUSIC/SONG3BS2WT.mp3")
+		if not audio_stream_player.stream == load("res://assets/music/SONG3BS2WT.mp3"):
+			audio_stream_player.stream = preload("res://assets/music/SONG3BS2WT.mp3")
 			audio_stream_player.play()
 			
+	var tween = get_tree().create_tween()
+	var tweens = get_tree().create_tween()
+		
+	if not Globals.game_timer >= 35 and $AudioStreamPlayer.volume_db != -30:
+		tween.tween_property($AudioStreamPlayer, "volume_db", -30, 3.0)
+		
+	if Globals.game_timer <= 31:
+		tweens.tween_property($AudioStreamPlayer, "volume_db", 20, 2.0)
+		
