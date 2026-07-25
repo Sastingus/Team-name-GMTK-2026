@@ -28,9 +28,16 @@ shape = SubResource("RectangleShape2D_6s3ad")
 z_index = -1
 position = Vector2(-71.43532, -15)
 scale = Vector2(0.6494215, 0.8460174)
-color = Color(0.20033002, 0.20033002, 0.20032999, 1)
-polygon = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 413.34528, -89.832664, 414.88513, 134.749)
+color = Color(0.28729492, 0.28729492, 0.2872949, 1)
+polygon = PackedVector2Array(-80.665405, 135.66667, -82.24152, 16.306793, -83.59952, -86.533676, 413.34528, -89.832664, 414.88513, 134.749)
 uv = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 414.3338, -89.46701, 421.67078, 126.133644)
+
+[node name="ColorRect" type="ColorRect" parent="Polygon2D" unique_id=935468013]
+offset_left = -28.586487
+offset_top = -68.5565
+offset_right = 250.12308
+offset_bottom = 99.28874
+color = Color(0.18837145, 0.18837145, 0.18837139, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=580010265]
 
