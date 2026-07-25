@@ -6,13 +6,13 @@ var mouse_velocity := Vector2.ZERO
 const THROW_STRENGTH = 0.5
 
 var sent_food := []
-const RECIPE_COUNT = 7
+const RECIPE_COUNT = 1
 
 var current_recipe := 1
 
 var in_game := false
 var game_timer := 0.0
-const GAME_TIME = 150
+const GAME_TIME = 35
 
 var current_station : Stations = Stations.KITCHEN
 
