@@ -56,7 +56,20 @@ metadata/_custom_type_script = "uid://cmdod6jbv00h0"
 rotation = 1.5946369
 shape = SubResource("CapsuleShape2D_bi3u6")
 
-[node name="Ingredient_Component" type="Node" parent="." unique_id=1945884771 node_paths=PackedStringArray("parent")]
+[node name="Ingredient_Component" type="Node" parent="." unique_id=1945884771 node_paths=PackedStringArray("parent", "label", "grab_component")]
 script = ExtResource("5_k5sv7")
 parent = NodePath("..")
+label = NodePath("../Label")
+item_name = "Egg"
+effects_list = Array[int]([2, 0])
+grab_component = NodePath("../GrabComponent")
 metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
+
+[node name="Label" type="Label" parent="." unique_id=767279785]
+top_level = true
+offset_left = -26.0
+offset_top = -112.0
+offset_right = 31.0
+offset_bottom = -26.0
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -12,10 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dmb07pac4ciu4" path="res://scenes/tools/pepper_shaker/pepper_shaker.tscn" id="7_folui"]
 [ext_resource type="PackedScene" uid="uid://bui68jasparpc" path="res://scenes/tools/Plate/plate.tscn" id="9_i30uk"]
 [ext_resource type="Texture2D" uid="uid://b1ncux0uqfrdd" path="res://assets/explosion.png" id="10_rbjkb"]
-[ext_resource type="PackedScene" uid="uid://bvdcyucxpcyw8" path="res://scenes/ingredients/pumpkin_pie/PumpkinBits.tscn" id="10_rjcos"]
 [ext_resource type="Theme" uid="uid://bfti8v7mjvobe" path="res://assets/button_theme.tres" id="10_vx1ig"]
 [ext_resource type="PackedScene" uid="uid://f1j8e05t3gcv" path="res://scenes/ingredients/infinite_source/infinite_source.tscn" id="11_thq3p"]
-[ext_resource type="PackedScene" uid="uid://ntwsa16ebcsq" path="res://scenes/tools/crust/crust.tscn" id="11_w8a3b"]
 [ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="13_3k0i1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
@@ -346,12 +344,6 @@ position = Vector2(-255, 244)
 
 [node name="PepperShaker" parent="KnifeStation" unique_id=702866216 instance=ExtResource("7_folui")]
 position = Vector2(492, 202)
-
-[node name="PumpkinBits" parent="KnifeStation" unique_id=710645974 instance=ExtResource("10_rjcos")]
-position = Vector2(0, 234)
-
-[node name="Crust" parent="KnifeStation" unique_id=1870618234 instance=ExtResource("11_w8a3b")]
-position = Vector2(261, 234)
 
 [node name="PlateStation" parent="." unique_id=1350042118 instance=ExtResource("1_sqeqr")]
 process_mode = 1

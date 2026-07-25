@@ -24,6 +24,14 @@ enum Stations{
 	PLATING
 }
 
+enum Effects{
+	CHOPPED,
+	RAW,
+	COOKED,
+	BURNT,
+	SEASONED,
+}
+
 func _ready() -> void:
 	game_timer = GAME_TIME
 
