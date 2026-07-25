@@ -335,5 +335,8 @@ offset_bottom = 281.0
 theme = ExtResource("10_vx1ig")
 text = "Back to main menu"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=451020778]
+autoplay = true
+
 [connection signal="pressed" from="Ui/LoseLabel/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Ui/WinLabel/RestartButton" to="." method="_on_restart_button_pressed"]
