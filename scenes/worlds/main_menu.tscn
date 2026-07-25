@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://bfti8v7mjvobe" path="res://assets/button_theme.tres" id="3_jixok"]
 [ext_resource type="FontFile" uid="uid://bu8nk1sjrv7xg" path="res://assets/GrapeSoda.ttf" id="3_v0ctj"]
 [ext_resource type="Texture2D" uid="uid://co5aplhdcab5j" path="res://assets/team-name-logo.png" id="5_jixok"]
-[ext_resource type="AudioStream" uid="uid://dq8gdg4o4d23y" path="res://assets/mUSIC/MenuA.mp3" id="6_oa4j6"]
+[ext_resource type="AudioStream" uid="uid://dq8gdg4o4d23y" path="res://assets/music/MenuA.mp3" id="6_oa4j6"]
 
 [sub_resource type="Theme" id="Theme_1b5k1"]
 default_font = ExtResource("3_v0ctj")

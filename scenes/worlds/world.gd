@@ -16,10 +16,12 @@ func _ready() -> void:
 
 func win():
 	win_label.visible = true
+	get_tree().paused = true
 
 func lose():
 	lose_label.visible = true
 	explosion.play("default")
+	get_tree().paused = true
 
 
 func _on_restart_button_pressed() -> void:
@@ -37,3 +39,5 @@ func music_player():
 			audio_stream_player.stream = preload("res://assets/music/SONG3BS2WT.mp3")
 			audio_stream_player.play()
 			
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(preload("res://scenes/worlds/main_menu.tscn"))

@@ -186,9 +186,11 @@ animations = [{
 }]
 
 [node name="world" type="Node2D" unique_id=737096411]
+process_mode = 3
 script = ExtResource("1_i30uk")
 
 [node name="KitchenStation" type="Node2D" parent="." unique_id=1151275089]
+process_mode = 1
 script = ExtResource("2_jwygn")
 metadata/_custom_type_script = "uid://djfl16qf421c2"
 
@@ -277,6 +279,7 @@ tile_map_data = PackedByteArray("AAD/////AAAAAAEAAAD//wAAAAAFAAIAAAD//wEAAAAFAAM
 tile_set = SubResource("TileSet_dld88")
 
 [node name="MicrowaveStation" parent="." unique_id=1889921677 instance=ExtResource("1_sqeqr")]
+process_mode = 1
 position = Vector2(3, -1359)
 station_id = 5
 
@@ -284,6 +287,7 @@ station_id = 5
 position = Vector2(-376, 178)
 
 [node name="KnifeStation" parent="." unique_id=1073761248 instance=ExtResource("1_sqeqr")]
+process_mode = 1
 position = Vector2(2824, -1359)
 station_id = 4
 
@@ -294,6 +298,7 @@ position = Vector2(-255, 244)
 position = Vector2(492, 202)
 
 [node name="PlateStation" parent="." unique_id=1350042118 instance=ExtResource("1_sqeqr")]
+process_mode = 1
 position = Vector2(5826, -1363)
 station_id = 6
 
@@ -424,6 +429,7 @@ color = Color(0.13333334, 0.1254902, 0.20392157, 1)
 position = Vector2(-2900, -1525)
 
 [node name="Ui" type="CanvasLayer" parent="." unique_id=725376548]
+process_mode = 3
 layer = 5
 
 [node name="TimerLabel" type="Label" parent="Ui" unique_id=1715821943]
