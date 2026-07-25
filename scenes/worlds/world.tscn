@@ -17,6 +17,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n71ak"]
+size = Vector2(313, 155)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thq3p"]
 size = Vector2(163, 134)
 
@@ -46,6 +49,21 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_dld88"]
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_n71ak")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k0i1"]
+size = Vector2(324, 1278)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svvlm"]
+size = Vector2(355.25, 1277.165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjcos"]
+size = Vector2(1232, 345.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8a3b"]
+size = Vector2(1232, 75.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1i314"]
+size = Vector2(1232, 331.8125)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vx1ig"]
 atlas = ExtResource("10_rbjkb")
@@ -179,7 +197,7 @@ metadata/_custom_type_script = "uid://djfl16qf421c2"
 [node name="MicrowaveStationSwitcher" type="Area2D" parent="KitchenStation" unique_id=149530949]
 position = Vector2(104, 3)
 script = ExtResource("3_vpaal")
-station = 4
+station = 5
 metadata/_custom_type_script = "uid://hqeekx3bwp31"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/MicrowaveStationSwitcher" unique_id=1569348684]
@@ -195,10 +213,29 @@ theme_override_fonts/font = ExtResource("4_n71ak")
 theme_override_font_sizes/font_size = 23
 text = "Microwave"
 
+[node name="ShelfStation" type="Area2D" parent="KitchenStation" unique_id=473796137]
+position = Vector2(-222, -208)
+script = ExtResource("3_vpaal")
+station = 1
+metadata/_custom_type_script = "uid://hqeekx3bwp31"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/ShelfStation" unique_id=1850218725]
+position = Vector2(-100.5, -33.5)
+shape = SubResource("RectangleShape2D_n71ak")
+
+[node name="Label" type="Label" parent="KitchenStation/ShelfStation" unique_id=1379458594]
+offset_left = -127.0
+offset_top = 48.0
+offset_right = -42.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_n71ak")
+theme_override_font_sizes/font_size = 23
+text = "Shelf"
+
 [node name="KnifeStationSwitcher" type="Area2D" parent="KitchenStation" unique_id=1960358375]
 position = Vector2(-218, 5)
 script = ExtResource("3_vpaal")
-station = 3
+station = 4
 metadata/_custom_type_script = "uid://hqeekx3bwp31"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/KnifeStationSwitcher" unique_id=626609330]
@@ -241,17 +278,14 @@ tile_set = SubResource("TileSet_dld88")
 
 [node name="MicrowaveStation" parent="." unique_id=1889921677 instance=ExtResource("1_sqeqr")]
 position = Vector2(3, -1359)
-station_id = 4
+station_id = 5
 
 [node name="Microwave" parent="MicrowaveStation" unique_id=1913045611 instance=ExtResource("2_vpaal")]
 position = Vector2(-376, 178)
 
-[node name="Egg" parent="MicrowaveStation" unique_id=1213985600 instance=ExtResource("6_xaid1")]
-position = Vector2(384, 220)
-
 [node name="KnifeStation" parent="." unique_id=1073761248 instance=ExtResource("1_sqeqr")]
 position = Vector2(2824, -1359)
-station_id = 3
+station_id = 4
 
 [node name="Knife" parent="KnifeStation" unique_id=472825561 instance=ExtResource("6_0qnlt")]
 position = Vector2(-255, 244)
@@ -265,6 +299,129 @@ station_id = 6
 
 [node name="Plate" parent="PlateStation" unique_id=1522694538 instance=ExtResource("9_i30uk")]
 position = Vector2(-28, 230)
+
+[node name="ShelfStation" type="Node2D" parent="." unique_id=830848079]
+script = ExtResource("2_jwygn")
+station_id = 1
+metadata/_custom_type_script = "uid://djfl16qf421c2"
+
+[node name="Camera2D" type="Camera2D" parent="ShelfStation" unique_id=903701353]
+position = Vector2(-2403, -1330)
+enabled = false
+
+[node name="CollisionBox" type="StaticBody2D" parent="ShelfStation" unique_id=1411690011]
+position = Vector2(-2403, -1330)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/CollisionBox" unique_id=965094184]
+position = Vector2(734, -27)
+shape = SubResource("RectangleShape2D_3k0i1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ShelfStation/CollisionBox" unique_id=47805555]
+position = Vector2(-755.375, -22.417511)
+shape = SubResource("RectangleShape2D_svvlm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ShelfStation/CollisionBox" unique_id=1532215486]
+position = Vector2(-6, 442.1875)
+shape = SubResource("RectangleShape2D_rjcos")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ShelfStation/CollisionBox" unique_id=749603419]
+position = Vector2(-6, 84)
+shape = SubResource("RectangleShape2D_w8a3b")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ShelfStation/CollisionBox" unique_id=397677055]
+position = Vector2(-6, -134)
+shape = SubResource("RectangleShape2D_w8a3b")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ShelfStation/CollisionBox" unique_id=947773943]
+position = Vector2(-6, -491.09375)
+shape = SubResource("RectangleShape2D_1i314")
+
+[node name="Counter" type="ColorRect" parent="ShelfStation/CollisionBox" unique_id=731531150]
+offset_left = -646.0
+offset_top = 267.0
+offset_right = 640.0
+offset_bottom = 351.0
+mouse_filter = 2
+color = Color(0.56078434, 0.3372549, 0.23137255, 1)
+
+[node name="CounterHighlights" type="ColorRect" parent="ShelfStation/CollisionBox" unique_id=1921694189]
+offset_left = 495.0
+offset_top = 267.0
+offset_right = 640.0
+offset_bottom = 351.0
+mouse_filter = 2
+color = Color(0.4, 0.22352941, 0.19215687, 1)
+
+[node name="Counter2" type="ColorRect" parent="ShelfStation/CollisionBox" unique_id=887381241]
+offset_left = -646.0
+offset_top = 45.0
+offset_right = 640.0
+offset_bottom = 129.0
+mouse_filter = 2
+color = Color(0.56078434, 0.3372549, 0.23137255, 1)
+
+[node name="Counter2Shadow" type="ColorRect" parent="ShelfStation/CollisionBox" unique_id=1487287069]
+z_index = -1
+offset_left = -646.0
+offset_top = 85.0
+offset_right = 640.0
+offset_bottom = 169.0
+mouse_filter = 2
+color = Color(0.1762557, 0.09491105, 0.15105352, 1)
+
+[node name="CounterHighlights2" type="ColorRect" parent="ShelfStation/CollisionBox" unique_id=810035181]
+offset_left = 495.0
+offset_top = 45.0
+offset_right = 640.0
+offset_bottom = 129.0
+mouse_filter = 2
+color = Color(0.4, 0.22352941, 0.19215687, 1)
+
+[node name="Counter3" type="ColorRect" parent="ShelfStation/CollisionBox" unique_id=1519185620]
+offset_left = -646.0
+offset_top = -175.0
+offset_right = 640.0
+offset_bottom = -91.0
+mouse_filter = 2
+color = Color(0.56078434, 0.3372549, 0.23137255, 1)
+
+[node name="Counter3Shadow" type="ColorRect" parent="ShelfStation/CollisionBox" unique_id=1626768851]
+z_index = -1
+offset_left = -646.0
+offset_top = -138.0
+offset_right = 640.0
+offset_bottom = -54.0
+mouse_filter = 2
+color = Color(0.1762557, 0.09491105, 0.15105352, 1)
+
+[node name="CounterHighlights3" type="ColorRect" parent="ShelfStation/CollisionBox" unique_id=966006173]
+offset_left = 495.0
+offset_top = -175.0
+offset_right = 640.0
+offset_bottom = -91.0
+mouse_filter = 2
+color = Color(0.4, 0.22352941, 0.19215687, 1)
+
+[node name="Background" type="ColorRect" parent="ShelfStation/CollisionBox" unique_id=821452526]
+z_index = -2
+offset_left = -644.0
+offset_top = -422.0
+offset_right = 642.0
+offset_bottom = 351.0
+mouse_filter = 2
+color = Color(0.27058825, 0.15686275, 0.23529412, 1)
+
+[node name="BackgroundHighlights" type="ColorRect" parent="ShelfStation/CollisionBox" unique_id=1778085293]
+z_index = -2
+offset_left = -644.0
+offset_top = -422.0
+offset_right = 642.0
+offset_bottom = -270.0
+mouse_filter = 2
+color = Color(0.13333334, 0.1254902, 0.20392157, 1)
+
+[node name="Egg" parent="ShelfStation" unique_id=1213985600 instance=ExtResource("6_xaid1")]
+position = Vector2(-2900, -1525)
 
 [node name="Ui" type="CanvasLayer" parent="." unique_id=725376548]
 layer = 5

@@ -53,24 +53,27 @@ script = ExtResource("1_3pjeb")
 
 [node name="GrabComponent" type="Node2D" parent="." unique_id=1016704357 node_paths=PackedStringArray("grab_area", "parent")]
 rotation = 3.1415927
+scale = Vector2(0.48540342, 0.48540342)
 script = ExtResource("2_7jw6a")
 grab_area = NodePath("../GrabArea")
 parent = NodePath("..")
-station = 3
+station = 4
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=973312508]
 position = Vector2(-1.5000038, -14.499996)
 rotation = -3.1415925
+scale = Vector2(0.48540342, 0.48540342)
 shape = SubResource("RectangleShape2D_3pjeb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2000902153]
 rotation = -3.1415925
-scale = Vector2(12.279169, 12.279169)
+scale = Vector2(5.9603505, 5.9603505)
 sprite_frames = SubResource("SpriteFrames_07jyi")
 
 [node name="PepperArea" type="Area2D" parent="." unique_id=498909171]
 rotation = -3.1415925
+scale = Vector2(0.48540342, 0.48540342)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PepperArea" unique_id=1524832217]
 position = Vector2(0, -115)
@@ -85,6 +88,7 @@ process_material = SubResource("ParticleProcessMaterial_07jyi")
 
 [node name="GrabArea" type="Area2D" parent="." unique_id=1343359913]
 rotation = -3.1415925
+scale = Vector2(0.48540342, 0.48540342)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=375268892]
 position = Vector2(0, 17)
