@@ -129,6 +129,7 @@ offset_right = 536.0
 offset_bottom = 223.0
 scale = Vector2(9.5199995, 9.5199995)
 text = "Game Name"
+autowrap_trim_flags = 128
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1768084442]
 root_node = NodePath("AnimatedSprite2D")
