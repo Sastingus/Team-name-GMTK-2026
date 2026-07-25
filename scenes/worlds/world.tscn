@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://btxhrcasqfjue"]
+[gd_scene format=4 uid="uid://btxhrcasqfjue"]
 
 [ext_resource type="Script" uid="uid://che7s13qv6h8q" path="res://scenes/worlds/world.gd" id="1_i30uk"]
 [ext_resource type="PackedScene" uid="uid://dvnngx1t1ppdt" path="res://scenes/stations/station.tscn" id="1_sqeqr"]
 [ext_resource type="Script" uid="uid://djfl16qf421c2" path="res://scenes/stations/station.gd" id="2_jwygn"]
 [ext_resource type="PackedScene" uid="uid://b5gebj45i87sl" path="res://scenes/tools/microwave/microwave.tscn" id="2_vpaal"]
 [ext_resource type="Script" uid="uid://hqeekx3bwp31" path="res://scenes/stations/station_switcher/station_switcher.gd" id="3_vpaal"]
+[ext_resource type="Texture2D" uid="uid://bb7rbk7tsfqk" path="res://assets/Sprite-0011.png" id="4_cvimc"]
+[ext_resource type="FontFile" uid="uid://bu8nk1sjrv7xg" path="res://assets/GrapeSoda.ttf" id="4_n71ak"]
 [ext_resource type="PackedScene" uid="uid://62n6doyhs72j" path="res://scenes/tools/knife/knife.tscn" id="6_0qnlt"]
 [ext_resource type="PackedScene" uid="uid://bvu1us48n8nbf" path="res://scenes/ingredients/egg.tscn" id="6_xaid1"]
 [ext_resource type="PackedScene" uid="uid://dmb07pac4ciu4" path="res://scenes/tools/pepper_shaker/pepper_shaker.tscn" id="7_folui"]
@@ -15,8 +17,35 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thq3p"]
+size = Vector2(163, 134)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07jyi"]
-size = Vector2(163, 132)
+size = Vector2(163, 91)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n71ak"]
+texture = ExtResource("4_cvimc")
+texture_region_size = Vector2i(64, 64)
+2:1/size_in_atlas = Vector2i(1, 2)
+2:1/0 = 0
+2:1/0/texture_origin = Vector2i(0, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+5:3/0 = 0
+1:1/size_in_atlas = Vector2i(1, 2)
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, 32)
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dld88"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_n71ak")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vx1ig"]
 atlas = ExtResource("10_rbjkb")
@@ -148,7 +177,7 @@ metadata/_custom_type_script = "uid://djfl16qf421c2"
 [node name="Camera2D" type="Camera2D" parent="KitchenStation" unique_id=351758182]
 
 [node name="MicrowaveStationSwitcher" type="Area2D" parent="KitchenStation" unique_id=149530949]
-position = Vector2(-407, 2)
+position = Vector2(104, 3)
 script = ExtResource("3_vpaal")
 station = 4
 metadata/_custom_type_script = "uid://hqeekx3bwp31"
@@ -158,76 +187,57 @@ position = Vector2(-25.5, -19)
 shape = SubResource("RectangleShape2D_0qnlt")
 
 [node name="Label" type="Label" parent="KitchenStation/MicrowaveStationSwitcher" unique_id=2018291006]
-offset_left = -37.0
+offset_left = -67.0
 offset_top = -79.0
-offset_right = 48.0
+offset_right = 18.0
 offset_bottom = -56.0
-text = "microwave"
-
-[node name="Polygon2D" type="Polygon2D" parent="KitchenStation/MicrowaveStationSwitcher" unique_id=560359435]
-z_index = -1
-position = Vector2(-71.43532, -15)
-scale = Vector2(0.2829661, 0.36862692)
-color = Color(0.20033002, 0.20033002, 0.20032999, 1)
-polygon = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 413.34528, -89.832664, 414.88513, 134.749)
-uv = PackedVector2Array(-80.665405, 135.66667, -83.59952, -86.533676, 414.3338, -89.46701, 421.67078, 126.133644)
-
-[node name="temp_HeatLabel" type="Label" parent="KitchenStation/MicrowaveStationSwitcher/Polygon2D" unique_id=1045882926]
-offset_left = 263.0537
-offset_top = -65.106476
-offset_right = 372.60742
-offset_bottom = -51.106476
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 10
-text = "current temp = 350"
+theme_override_fonts/font = ExtResource("4_n71ak")
+theme_override_font_sizes/font_size = 23
+text = "Microwave"
 
 [node name="KnifeStationSwitcher" type="Area2D" parent="KitchenStation" unique_id=1960358375]
-position = Vector2(-178, 2)
+position = Vector2(-218, 5)
 script = ExtResource("3_vpaal")
 station = 3
 metadata/_custom_type_script = "uid://hqeekx3bwp31"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/KnifeStationSwitcher" unique_id=626609330]
-position = Vector2(-25.5, -19)
-shape = SubResource("RectangleShape2D_0qnlt")
+position = Vector2(-25.5, -23)
+shape = SubResource("RectangleShape2D_thq3p")
 
 [node name="Label" type="Label" parent="KitchenStation/KnifeStationSwitcher" unique_id=735210594]
-offset_left = -37.0
-offset_top = -79.0
-offset_right = 48.0
-offset_bottom = -56.0
+offset_left = -61.0
+offset_top = -89.0
+offset_right = 24.0
+offset_bottom = -65.0
+theme_override_fonts/font = ExtResource("4_n71ak")
+theme_override_font_sizes/font_size = 23
 text = "Knife"
 
-[node name="Polygon2D" type="Polygon2D" parent="KitchenStation/KnifeStationSwitcher" unique_id=1425994351]
-z_index = -1
-position = Vector2(-63, 45.999996)
-scale = Vector2(0.2829661, 0.36862692)
-polygon = PackedVector2Array(-86.79053, -86.944275, 271.06488, -89.30636, 272.2459, -65.68553, 332.479, -66.86658, 338.38416, -34.978462, 268.70285, -38.521587, 271.0649, -17.262856, -32.462616, -34.97847)
-uv = PackedVector2Array(-86.79053, -86.944275, 271.06488, -89.30636, 274.60797, -50.332, 339.56525, -53.87513, 330.11688, -17.262848, 279.3322, -21.987015, 280.51324, -3.0903625, -28.919495, -7.8145294)
-
 [node name="PlatingStationSwitcher" type="Area2D" parent="KitchenStation" unique_id=1372410199]
-position = Vector2(459, 3)
+position = Vector2(400, -18)
 script = ExtResource("3_vpaal")
 station = 6
 metadata/_custom_type_script = "uid://hqeekx3bwp31"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation/PlatingStationSwitcher" unique_id=1039286247]
-position = Vector2(-1, -2)
+position = Vector2(-1, 18.5)
 shape = SubResource("RectangleShape2D_07jyi")
 
 [node name="Label" type="Label" parent="KitchenStation/PlatingStationSwitcher" unique_id=854662498]
-offset_left = -23.0
-offset_top = -61.0
-offset_right = 22.0
-offset_bottom = -45.0
+offset_left = -32.0
+offset_top = -22.0
+offset_right = 33.0
+offset_bottom = 2.0
+theme_override_fonts/font = ExtResource("4_n71ak")
+theme_override_font_sizes/font_size = 23
 text = "Plating"
 
-[node name="Polygon2D" type="Polygon2D" parent="KitchenStation/PlatingStationSwitcher" unique_id=839292260]
-position = Vector2(2, 36)
-rotation = 0.008726646
-scale = Vector2(0.22509818, 0.22509818)
-polygon = PackedVector2Array(-265.66638, -14.666664, 333.0003, -18.666664, 271.667, 1.3333359, -225.66638, 5.333336)
-uv = PackedVector2Array(-265.66638, -14.666664, 333.0003, -18.666664, 271.667, 1.3333359, -221.66638, 8.666672)
+[node name="Background" type="TileMapLayer" parent="KitchenStation" unique_id=62442441]
+z_index = -2
+scale = Vector2(2.52, 2.52)
+tile_map_data = PackedByteArray("AAD/////AAAAAAEAAAD//wAAAAAFAAIAAAD//wEAAAAFAAMAAAD///7/AAACAAAAAAAAAAAAAAACAAEAAAABAAAAAAAEAAIAAAACAAAAAAADAAIAAAADAAAAAAAFAAIAAAD+/wAAAAABAAEAAAD9/wAAAAAAAAIAAAD8/wAAAAAFAAIAAAADAAEAAAAFAAMAAAACAAEAAAAFAAMAAAABAAEAAAAFAAMAAAAAAAEAAAAFAAMAAAD+/wEAAAAFAAMAAAD9/wEAAAAFAAMAAAD8/wEAAAAFAAMAAAAAAP7/AAACAAAAAAABAP7/AAACAAAAAAACAP7/AAACAAAAAAD9//7/AAAAAAAAAAD+//7/AAAEAAAAAAD8////AAAAAAEAAAD9////AAAAAAEAAAD+////AAAAAAEAAAABAP//AAAAAAEAAAACAP//AAAAAAEAAAADAP//AAAAAAEAAAADAP7/AAACAAAAAAD8//7/AAACAAAAAAA=")
+tile_set = SubResource("TileSet_dld88")
 
 [node name="MicrowaveStation" parent="." unique_id=1889921677 instance=ExtResource("1_sqeqr")]
 position = Vector2(3, -1359)

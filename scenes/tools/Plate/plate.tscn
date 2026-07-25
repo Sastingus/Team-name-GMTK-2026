@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bui68jasparpc"]
 
-[ext_resource type="Script" uid="uid://mi7yld5w24xv" path="res://scenes/tools/Plate/plate.gd" id="1_ui4i7"]
+[ext_resource type="Script" uid="uid://mi7yld5w24xv" path="res://scenes/tools/plate/plate.gd" id="1_ui4i7"]
 [ext_resource type="Theme" uid="uid://bfti8v7mjvobe" path="res://assets/button_theme.tres" id="2_u3mkx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07jyi"]
