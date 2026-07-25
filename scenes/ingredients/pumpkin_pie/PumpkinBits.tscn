@@ -23,7 +23,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k77dg"]
-radius = 29.614185
+radius = 27.073973
 
 [node name="PumpkinBits" type="RigidBody2D" unique_id=710645974]
 
@@ -57,9 +57,9 @@ metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
 
 [node name="Label" type="Label" parent="." unique_id=521089260]
 top_level = true
-offset_left = -26.0
+offset_left = -61.0
 offset_top = -112.0
-offset_right = 31.0
+offset_right = 66.0
 offset_bottom = -26.0
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bvu1us48n8nbf" path="res://scenes/ingredients/deviled_egg/cut_egg.tscn" id="4_m4w0f"]
 [ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="4_tfu2p"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
-radius = 47.853943
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bi3u6"]
+radius = 19.0
+height = 59.792248
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45oqo"]
 atlas = ExtResource("4_tfu2p")
@@ -23,10 +24,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bi3u6"]
-radius = 19.0
-height = 59.792248
 
 [node name="Cooked_Egg" type="RigidBody2D" unique_id=1213985600]
 
@@ -54,8 +51,9 @@ metadata/_custom_type_script = "uid://b457sh2i4dh0g"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1609873041]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1961634614]
-shape = SubResource("CircleShape2D_1gpru")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1220224425]
+rotation = 1.5946369
+shape = SubResource("CapsuleShape2D_bi3u6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749977998]
 modulate = Color(0.67124677, 0.7148529, 0.6339864, 1)

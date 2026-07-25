@@ -25,7 +25,10 @@ animations = [{
 size = Vector2(173, 105)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bii8u"]
-size = Vector2(173, 15)
+size = Vector2(173, 20.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agpiq"]
+size = Vector2(12, 106)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u56pr"]
 texture = ExtResource("3_agpiq")
@@ -63,16 +66,29 @@ scale = Vector2(1.4926465, 1.4926465)
 sprite_frames = SubResource("SpriteFrames_0onbk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=898840610]
-visible = false
 position = Vector2(3.5, 16.5)
 shape = SubResource("RectangleShape2D_6s3ad")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=580010265]
-visible = false
+[node name="Walls" type="StaticBody2D" parent="." unique_id=580010265]
 
-[node name="MicrowaveFloor" type="CollisionShape2D" parent="StaticBody2D" unique_id=996124147]
-position = Vector2(3.5, 76.5)
+[node name="MicrowaveFloor" type="CollisionShape2D" parent="Walls" unique_id=996124147]
+position = Vector2(3.5, 74.5)
 shape = SubResource("RectangleShape2D_bii8u")
+disabled = true
+
+[node name="MicrowaveWall1" type="CollisionShape2D" parent="Walls" unique_id=544869177]
+position = Vector2(3, -43.25)
+shape = SubResource("RectangleShape2D_bii8u")
+disabled = true
+
+[node name="MicrowaveWall2" type="CollisionShape2D" parent="Walls" unique_id=993113090]
+position = Vector2(-87, 17)
+shape = SubResource("RectangleShape2D_agpiq")
+disabled = true
+
+[node name="MicrowaveWall3" type="CollisionShape2D" parent="Walls" unique_id=946917093]
+position = Vector2(90, 18)
+shape = SubResource("RectangleShape2D_agpiq")
 disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1969686714]

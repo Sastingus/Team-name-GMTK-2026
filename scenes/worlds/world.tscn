@@ -67,6 +67,9 @@ size = Vector2(118.09531, 429.5636)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smwsn"]
 size = Vector2(541.34924, 84.48411)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gpru"]
+size = Vector2(586, 37)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3k0i1"]
 size = Vector2(324, 1278)
 
@@ -488,7 +491,20 @@ position = Vector2(2824, -1359)
 station_id = 4
 
 [node name="Knife" parent="KnifeStation" unique_id=472825561 instance=ExtResource("6_0qnlt")]
-position = Vector2(489, 239)
+position = Vector2(458, 229)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="KnifeStation" unique_id=229055518]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KnifeStation/StaticBody2D" unique_id=1978992385]
+position = Vector2(-12, 248.5)
+shape = SubResource("RectangleShape2D_1gpru")
+
+[node name="ColorRect" type="ColorRect" parent="KnifeStation/StaticBody2D" unique_id=1154038024]
+offset_left = -306.0
+offset_top = 227.0
+offset_right = 280.0
+offset_bottom = 267.0
+color = Color(0.43459824, 0.3125493, 0.21255377, 1)
 
 [node name="PlateStation" parent="." unique_id=1350042118 instance=ExtResource("1_sqeqr")]
 process_mode = 1

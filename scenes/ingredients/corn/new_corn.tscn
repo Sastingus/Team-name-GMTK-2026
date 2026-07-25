@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dugpytv46gswh" path="res://scenes/ingredients/corn/cut_corn.tscn" id="4_mmtch"]
 [ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="5_0hp0s"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
-radius = 38.013157
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bi3u6"]
+radius = 7.973889
+height = 38.76973
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvi7i"]
 atlas = ExtResource("5_0hp0s")
@@ -23,10 +24,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bi3u6"]
-radius = 7.973889
-height = 38.76973
 
 [node name="Cut_Corn" type="RigidBody2D" unique_id=1213985600]
 
@@ -53,8 +50,11 @@ metadata/_custom_type_script = "uid://b457sh2i4dh0g"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1609873041]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1961634614]
-shape = SubResource("CircleShape2D_1gpru")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=506009176]
+position = Vector2(1, 0)
+rotation = 1.3594782
+scale = Vector2(1.4683213, 1.4683213)
+shape = SubResource("CapsuleShape2D_bi3u6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749977998]
 position = Vector2(2, -1.1920929e-07)

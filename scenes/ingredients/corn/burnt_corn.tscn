@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="2_httsm"]
 [ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="3_f4t86"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
-radius = 38.013157
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bi3u6"]
+radius = 7.973889
+height = 38.76973
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wae1k"]
 atlas = ExtResource("3_f4t86")
@@ -21,10 +22,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bi3u6"]
-radius = 7.973889
-height = 38.76973
 
 [node name="Burnt_Corn" type="RigidBody2D" unique_id=1213985600]
 
@@ -45,8 +42,11 @@ metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1609873041]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1961634614]
-shape = SubResource("CircleShape2D_1gpru")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=985955921]
+position = Vector2(0.9999999, -2.0000002)
+rotation = 1.4203823
+scale = Vector2(1.5954226, 1.5954226)
+shape = SubResource("CapsuleShape2D_bi3u6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749977998]
 modulate = Color(0.38337135, 0.24389711, 0.32762828, 1)

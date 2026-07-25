@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dwjbn17x3xyne" path="res://assets/Sprite-0002.png" id="3_b8owq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8owq"]
-size = Vector2(223.91324, 69.24255)
+size = Vector2(169, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7u1n"]
-size = Vector2(190.91324, 39)
+size = Vector2(167, 39)
 
 [sub_resource type="Gradient" id="Gradient_ti4u6"]
 colors = PackedColorArray(0.4722861, 0.37187958, 0.3615785, 1, 0.68072534, 0.5686767, 0.55545163, 1)
@@ -65,11 +65,11 @@ metadata/_custom_type_script = "uid://dx8leo388mpyq"
 position = Vector2(-285.08676, -14.242558)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=2090309840]
-position = Vector2(227.04338, 17.621279)
+position = Vector2(222.58676, 12.242557)
 shape = SubResource("RectangleShape2D_b8owq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=814994311]
-position = Vector2(-50.54338, 1.2574425)
+position = Vector2(-62.5, 1.2574425)
 shape = SubResource("RectangleShape2D_w7u1n")
 
 [node name="HitParticles" type="GPUParticles2D" parent="." unique_id=968718610]

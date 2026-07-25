@@ -74,9 +74,9 @@ metadata/_custom_type_script = "uid://dnkji1xxip324"
 
 [node name="Label" type="Label" parent="." unique_id=1198156259]
 top_level = true
-offset_left = -26.0
+offset_left = -55.0
 offset_top = -112.0
-offset_right = 31.0
+offset_right = 60.0
 offset_bottom = -26.0
 horizontal_alignment = 1
 vertical_alignment = 1

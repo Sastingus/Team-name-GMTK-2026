@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://druvhwuqvo3qo" path="res://scenes/ingredients/cranberry_sauce/uncanned_cranberry.tscn" id="4_x0gth"]
 [ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="5_2t8m0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
-radius = 33.01515
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p63ti"]
+size = Vector2(38.97845, 54.000015)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0gth"]
 atlas = ExtResource("5_2t8m0")
@@ -23,9 +23,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p63ti"]
-size = Vector2(38.97845, 54.000015)
 
 [node name="new_cranberry" type="RigidBody2D" unique_id=1213985600]
 
@@ -52,8 +49,10 @@ metadata/_custom_type_script = "uid://b457sh2i4dh0g"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1609873041]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1961634614]
-shape = SubResource("CircleShape2D_1gpru")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=954533799]
+position = Vector2(1.5107794, -3.0000002)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_p63ti")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749977998]
 position = Vector2(1.9999999, -1.9999999)
@@ -67,9 +66,9 @@ shape = SubResource("RectangleShape2D_p63ti")
 
 [node name="Label" type="Label" parent="." unique_id=767279785]
 top_level = true
-offset_left = -26.0
+offset_left = -47.0
 offset_top = -112.0
-offset_right = 31.0
+offset_right = 52.0
 offset_bottom = -26.0
 horizontal_alignment = 1
 vertical_alignment = 1

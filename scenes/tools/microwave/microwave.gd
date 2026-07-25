@@ -6,12 +6,12 @@ var current_temp := 0.0
 var microwave_started := false
 var microwave_opened := false
 
-const HEAT_PER_SECOND = 100
+const HEAT_PER_SECOND = 50
 const DOOR_MOVE_DISTANCE = 200
-const BURNT_HEAT = 100
+const BURNT_HEAT = 50
 @onready var heat_label: Label = $ColorRect/HeatLabel
 @onready var door_button: Button = $DoorButton
-@onready var microwave_floor: CollisionShape2D = $StaticBody2D/MicrowaveFloor
+@onready var microwave_walls: StaticBody2D = $Walls
 
 
 func _process(delta: float) -> void:
@@ -27,14 +27,14 @@ func _process(delta: float) -> void:
 
 func get_microwaveable() -> bool:
 	if current_target != null:
-		if not microwave_opened:
+		if microwave_opened:
 			if microwave_started:
 				return true
 	return false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_node("Microwaveable_Component"):
-		if microwave_opened:
+		if not microwave_opened:
 			current_target = body
 
 
@@ -43,7 +43,7 @@ func _on_body_exited(body: Node2D) -> void:
 		current_target = null
 
 func _on_start_button_pressed() -> void:
-	if not microwave_opened:
+	if microwave_opened:
 		microwave_started = true
 func _on_stop_button_pressed() -> void:
 	if get_microwaveable():
@@ -55,25 +55,30 @@ func _on_stop_button_pressed() -> void:
 	current_temp = 0
 
 func _on_door_button_toggled(toggled_on: bool) -> void:
-	microwave_opened = toggled_on
+	microwave_opened = not toggled_on
 	if not microwave_started:
 		if microwave_opened:
-			door_button.modulate = Color(0.0, 0.0, 0.0, 1)
-			door_button.position -= Vector2(door_button.size.x,0)
-			microwave_floor.disabled = false
-			door_button.z_index = -1
-			recalculate_target()
-		else:
 			door_button.modulate = Color(1.0, 1.0, 1.0, 0.7)
 			door_button.position += Vector2(door_button.size.x,0)
 			if current_target == null:
-				microwave_floor.disabled = true
+				enable_walls(true)
 				door_button.z_index = -1
 			else:
-				microwave_floor.disabled = false
+				enable_walls(false)
 				door_button.z_index = 1
+		else:
+			door_button.modulate = Color(0.0, 0.0, 0.0, 1)
+			door_button.position -= Vector2(door_button.size.x,0)
+			enable_walls(false)
+			door_button.z_index = -1
+			recalculate_target()
+			
 
 func recalculate_target():
 	for body in get_overlapping_bodies():
 		if body.has_node("Microwaveable_Component"):
 			body_entered.emit(body)
+
+func enable_walls(yes):
+	for wall in microwave_walls.get_children():
+		wall.disabled = yes
