@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bui68jasparpc" path="res://scenes/tools/Plate/plate.tscn" id="9_i30uk"]
 [ext_resource type="Texture2D" uid="uid://b1ncux0uqfrdd" path="res://assets/explosion.png" id="10_rbjkb"]
 [ext_resource type="Theme" uid="uid://bfti8v7mjvobe" path="res://assets/button_theme.tres" id="10_vx1ig"]
+[ext_resource type="PackedScene" uid="uid://f1j8e05t3gcv" path="res://scenes/ingredients/infinite_source/infinite_source.tscn" id="11_thq3p"]
+[ext_resource type="Texture2D" uid="uid://b4686dfjtaoin" path="res://assets/Sprite-0008.png" id="13_3k0i1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
@@ -54,7 +56,7 @@ sources/0 = SubResource("TileSetAtlasSource_n71ak")
 size = Vector2(118.09531, 429.5636)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smwsn"]
-size = Vector2(541.34924, 80.873)
+size = Vector2(541.34924, 84.48411)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3k0i1"]
 size = Vector2(324, 1278)
@@ -70,6 +72,24 @@ size = Vector2(1232, 75.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1i314"]
 size = Vector2(1232, 331.8125)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_07jyi"]
+radius = 65.11528
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibdix"]
+atlas = ExtResource("13_3k0i1")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1gpru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibdix")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vx1ig"]
 atlas = ExtResource("10_rbjkb")
@@ -295,8 +315,8 @@ scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_t4fke")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="KitchenStation/Background/StaticBody2D" unique_id=1613433008]
-position = Vector2(-5.1587286, 173.41269)
-scale = Vector2(0.99999976, 0.99999976)
+position = Vector2(-5.158728, 171.60713)
+scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_smwsn")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="KitchenStation/Background/StaticBody2D" unique_id=1834049277]
@@ -448,8 +468,18 @@ offset_bottom = -270.0
 mouse_filter = 2
 color = Color(0.13333334, 0.1254902, 0.20392157, 1)
 
-[node name="Egg" parent="ShelfStation" unique_id=1213985600 instance=ExtResource("6_xaid1")]
-position = Vector2(-2900, -1525)
+[node name="InfiniteSource" parent="ShelfStation" unique_id=1837830928 instance=ExtResource("11_thq3p")]
+position = Vector2(-2923, -1537)
+spawned_item = ExtResource("6_xaid1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/InfiniteSource" unique_id=1133164619]
+position = Vector2(43, -4)
+shape = SubResource("CircleShape2D_07jyi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ShelfStation/InfiniteSource" unique_id=175952641]
+position = Vector2(41, 4)
+scale = Vector2(7.5, 7.5)
+sprite_frames = SubResource("SpriteFrames_1gpru")
 
 [node name="Ui" type="CanvasLayer" parent="." unique_id=725376548]
 layer = 5

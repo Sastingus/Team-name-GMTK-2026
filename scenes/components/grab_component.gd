@@ -39,10 +39,14 @@ func _process(delta: float) -> void:
 		parent.freeze = true
 		parent.global_position = get_global_mouse_position()
 	if not Globals.mouse_down && grabbing:
-		parent.freeze = false
-		parent.linear_velocity = tracked_velocity
-	if not Globals.mouse_down:
-		grabbing = false
+		if Globals.current_station != Globals.Stations.KITCHEN:
+			parent.global_position = get_global_mouse_position()
+			parent.freeze = false
+			parent.linear_velocity = tracked_velocity
+			grabbing = false
+		else:
+			parent.freeze = true
+			parent.global_position = get_global_mouse_position()
 
 
 func grab():
