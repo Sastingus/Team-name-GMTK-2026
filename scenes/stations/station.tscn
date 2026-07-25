@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://djfl16qf421c2" path="res://scenes/stations/station.gd" id="1_vl7xr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2oen"]
-size = Vector2(288.5, 1052)
+size = Vector2(324, 1278)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc6sy"]
-size = Vector2(310.5, 1052)
+size = Vector2(355.25, 1277.165)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ic5c"]
 size = Vector2(1232, 345.625)
@@ -23,11 +23,11 @@ enabled = false
 [node name="CollisionBox" type="StaticBody2D" parent="." unique_id=2111892794]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBox" unique_id=1819437575]
-position = Vector2(719.75, -8)
+position = Vector2(734, -27)
 shape = SubResource("RectangleShape2D_p2oen")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionBox" unique_id=1292560628]
-position = Vector2(-732.75, -10.165)
+position = Vector2(-755.375, -22.417511)
 shape = SubResource("RectangleShape2D_jc6sy")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionBox" unique_id=298658025]
@@ -38,9 +38,36 @@ shape = SubResource("RectangleShape2D_3ic5c")
 position = Vector2(-6, -491.09375)
 shape = SubResource("RectangleShape2D_vl7xr")
 
-[node name="ColorRect" type="ColorRect" parent="CollisionBox" unique_id=1863703579]
+[node name="Counter" type="ColorRect" parent="CollisionBox" unique_id=1863703579]
 offset_left = -644.0
 offset_top = 267.0
 offset_right = 642.0
 offset_bottom = 351.0
-color = Color(0.5386092, 0.39931512, 0.1912916, 1)
+mouse_filter = 2
+color = Color(0.60784316, 0.6784314, 0.7176471, 1)
+
+[node name="CounterHighlights" type="ColorRect" parent="CollisionBox" unique_id=981271925]
+offset_left = 497.0
+offset_top = 267.0
+offset_right = 642.0
+offset_bottom = 351.0
+mouse_filter = 2
+color = Color(0.5176471, 0.49411765, 0.5294118, 1)
+
+[node name="Background" type="ColorRect" parent="CollisionBox" unique_id=1674772247]
+z_index = -2
+offset_left = -644.0
+offset_top = -422.0
+offset_right = 642.0
+offset_bottom = 351.0
+mouse_filter = 2
+color = Color(0.27058825, 0.15686275, 0.23529412, 1)
+
+[node name="BackgroundHighlights" type="ColorRect" parent="CollisionBox" unique_id=657738624]
+z_index = -2
+offset_left = -644.0
+offset_top = -422.0
+offset_right = 642.0
+offset_bottom = -270.0
+mouse_filter = 2
+color = Color(0.13333334, 0.1254902, 0.20392157, 1)
