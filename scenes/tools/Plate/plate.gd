@@ -3,7 +3,7 @@ class_name Plate
 
 var current_target : RigidBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var sprite: Polygon2D = $Polygon2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var button: Button = $Button
 
 func send_off():

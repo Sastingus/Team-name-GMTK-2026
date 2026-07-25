@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://dmb07pac4ciu4"]
 
 [ext_resource type="Script" uid="uid://du1tdvdh7mxch" path="res://scenes/tools/pepper_shaker/pepper_shaker.gd" id="1_3pjeb"]
-[ext_resource type="Texture2D" uid="uid://cb6vlcd35ghgu" path="res://assets/Sprite-0008.png" id="1_5slq1"]
+[ext_resource type="Texture2D" uid="uid://b4686dfjtaoin" path="res://assets/Sprite-0008.png" id="1_5slq1"]
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_7jw6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pjeb"]
 size = Vector2(105.000015, 148.99998)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k2krf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pjeb"]
 atlas = ExtResource("1_5slq1")
-region = Rect2(192, 64, 64, 64)
+region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_07jyi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k2krf")
+"texture": SubResource("AtlasTexture_3pjeb")
 }],
 "loop": 1,
 "name": &"default",
@@ -66,7 +66,7 @@ shape = SubResource("RectangleShape2D_3pjeb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2000902153]
 rotation = -3.1415925
-scale = Vector2(3.15625, 3.15625)
+scale = Vector2(12.279169, 12.279169)
 sprite_frames = SubResource("SpriteFrames_07jyi")
 
 [node name="PepperArea" type="Area2D" parent="." unique_id=498909171]
