@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://byex3tj332bpe"]
+
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="1_iygs7"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="2_2ybi3"]
+[ext_resource type="Script" uid="uid://dnkji1xxip324" path="res://scenes/components/microwaveable_component.gd" id="3_5a15r"]
+[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="3_os4md"]
+[ext_resource type="PackedScene" uid="uid://itjdx2a1brfh" path="res://scenes/ingredients/stuffing/cooked_stuffing.tscn" id="4_i6rx5"]
+[ext_resource type="PackedScene" uid="uid://d0l65suwh3r5w" path="res://scenes/ingredients/stuffing/burnt_stuffing.tscn" id="5_5a15r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
+radius = 79.00633
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a15r"]
+atlas = ExtResource("3_os4md")
+region = Rect2(96, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1s30c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a15r")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p63ti"]
+size = Vector2(38.97845, 54.000015)
+
+[node name="Cooked_Stuffing" type="RigidBody2D" unique_id=1213985600]
+
+[node name="GrabComponent" type="Node2D" parent="." unique_id=1534589526 node_paths=PackedStringArray("grab_area", "parent")]
+script = ExtResource("1_iygs7")
+grab_area = NodePath("../Area2D")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://dx8leo388mpyq"
+
+[node name="Ingredient_Component" type="Node" parent="." unique_id=1945884771 node_paths=PackedStringArray("parent", "label", "grab_component")]
+script = ExtResource("2_2ybi3")
+parent = NodePath("..")
+label = NodePath("../Label")
+item_name = "Stuffing"
+effects_list = Array[int]([0])
+grab_component = NodePath("../GrabComponent")
+metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
+
+[node name="Microwaveable_Component" type="Node" parent="." unique_id=1048687307 node_paths=PackedStringArray("parent")]
+script = ExtResource("3_5a15r")
+parent = NodePath("..")
+target_heat = 250
+replacement_object = ExtResource("4_i6rx5")
+burnt_replacement_object = ExtResource("5_5a15r")
+metadata/_custom_type_script = "uid://dnkji1xxip324"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1609873041]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1961634614]
+shape = SubResource("CircleShape2D_1gpru")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749977998]
+position = Vector2(1.9999999, -1.9999999)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_1s30c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1803970261]
+position = Vector2(1.5107794, -3.0000002)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_p63ti")
+
+[node name="Label" type="Label" parent="." unique_id=767279785]
+top_level = true
+offset_left = -26.0
+offset_top = -112.0
+offset_right = 31.0
+offset_bottom = -26.0
+horizontal_alignment = 1
+vertical_alignment = 1

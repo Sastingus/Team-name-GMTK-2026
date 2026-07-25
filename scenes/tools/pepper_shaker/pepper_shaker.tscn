@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmb07pac4ciu4"]
 
 [ext_resource type="Script" uid="uid://du1tdvdh7mxch" path="res://scenes/tools/pepper_shaker/pepper_shaker.gd" id="1_3pjeb"]
-[ext_resource type="Texture2D" uid="uid://b4686dfjtaoin" path="res://assets/Sprite-0008.png" id="1_5slq1"]
+[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="1_5slq1"]
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_7jw6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pjeb"]
@@ -57,7 +57,7 @@ scale = Vector2(0.48540342, 0.48540342)
 script = ExtResource("2_7jw6a")
 grab_area = NodePath("../GrabArea")
 parent = NodePath("..")
-station = 4
+station = 6
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=973312508]

@@ -131,6 +131,7 @@ offset_left = 102.0
 offset_top = -36.0
 offset_right = 156.0
 offset_bottom = 72.0
+mouse_filter = 2
 color = Color(0.19076243, 0.19076228, 0.19076234, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bvu1us48n8nbf"]
 
-[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="1_c44us"]
-[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_ri3vy"]
-[ext_resource type="Script" uid="uid://cmdod6jbv00h0" path="res://scenes/components/seasonable_component.gd" id="3_ndixj"]
-[ext_resource type="PackedScene" uid="uid://4fg5ks6px2aa" path="res://scenes/ingredients/seasoned_egg.tscn" id="4_qeymw"]
-[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="5_k5sv7"]
+[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="1_wvh64"]
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_8eb41"]
+[ext_resource type="Script" uid="uid://cmdod6jbv00h0" path="res://scenes/components/seasonable_component.gd" id="3_rhjio"]
+[ext_resource type="PackedScene" uid="uid://4fg5ks6px2aa" path="res://scenes/ingredients/deviled_egg/seasoned_egg.tscn" id="4_tytri"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="5_drfga"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1gpru"]
 radius = 47.853943
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q8ax3"]
-atlas = ExtResource("1_c44us")
+atlas = ExtResource("1_wvh64")
 region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_07jyi"]
@@ -41,14 +41,14 @@ scale = Vector2(3.78125, 3.78125)
 sprite_frames = SubResource("SpriteFrames_07jyi")
 
 [node name="GrabComponent" type="Node2D" parent="." unique_id=1534589526 node_paths=PackedStringArray("grab_area", "parent")]
-script = ExtResource("2_ri3vy")
+script = ExtResource("2_8eb41")
 grab_area = NodePath("../Area2D")
 parent = NodePath("..")
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
 
 [node name="SeasonableComponent" type="Node" parent="." unique_id=4168141 node_paths=PackedStringArray("parent")]
-script = ExtResource("3_ndixj")
-replacement_object = ExtResource("4_qeymw")
+script = ExtResource("3_rhjio")
+replacement_object = ExtResource("4_tytri")
 parent = NodePath("..")
 metadata/_custom_type_script = "uid://cmdod6jbv00h0"
 
@@ -57,7 +57,7 @@ rotation = 1.5946369
 shape = SubResource("CapsuleShape2D_bi3u6")
 
 [node name="Ingredient_Component" type="Node" parent="." unique_id=1945884771 node_paths=PackedStringArray("parent", "label", "grab_component")]
-script = ExtResource("5_k5sv7")
+script = ExtResource("5_drfga")
 parent = NodePath("..")
 label = NodePath("../Label")
 item_name = "Egg"
