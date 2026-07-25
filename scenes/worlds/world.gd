@@ -17,11 +17,17 @@ func _ready() -> void:
 func win():
 	win_label.visible = true
 	get_tree().paused = true
+	if not audio_stream_player.stream == load("res://assets/music/WinSong.mp3"):
+			audio_stream_player.stream = preload("res://assets/music/WinSong.mp3")
+			audio_stream_player.play()
 
 func lose():
 	lose_label.visible = true
 	explosion.play("default")
 	get_tree().paused = true
+	if not audio_stream_player.stream == load("res://assets/music/LoseSong.mp3"):
+			audio_stream_player.stream = preload("res://assets/music/LoseSong.mp3")
+			audio_stream_player.play()
 
 
 func _on_restart_button_pressed() -> void:
@@ -34,7 +40,7 @@ func music_player():
 		if not audio_stream_player.stream == load("res://assets/music/A-Song.mp3"):
 			audio_stream_player.stream = preload("res://assets/music/A-Song.mp3")
 			audio_stream_player.play()
-	else:
+	elif Globals.game_timer <= 30:
 		if not audio_stream_player.stream == load("res://assets/music/SONG3BS2WT.mp3"):
 			audio_stream_player.stream = preload("res://assets/music/SONG3BS2WT.mp3")
 			audio_stream_player.play()

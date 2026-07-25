@@ -1,17 +1,15 @@
-[gd_scene format=3 uid="uid://3isp012afdsd"]
+[gd_scene format=3 uid="uid://cg60m5h7i6y2q"]
 
-[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="1_ka6h1"]
-[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="2_jqsdo"]
-[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="3_bg764"]
-[ext_resource type="Script" uid="uid://cmdod6jbv00h0" path="res://scenes/components/seasonable_component.gd" id="3_u1se4"]
-[ext_resource type="PackedScene" uid="uid://cg60m5h7i6y2q" path="res://scenes/ingredients/mashed_potatoes/mashed_potatoes.tscn" id="4_p7ls1"]
+[ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="1_vw5nv"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="2_rcrbk"]
+[ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="3_vd4bc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bi3u6"]
 radius = 25.326635
 height = 85.78487
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnfot"]
-atlas = ExtResource("3_bg764")
+atlas = ExtResource("3_vd4bc")
 region = Rect2(0, 112, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mnfot"]
@@ -28,25 +26,20 @@ animations = [{
 [node name="Cooked_Potato" type="RigidBody2D" unique_id=1213985600]
 
 [node name="GrabComponent" type="Node2D" parent="." unique_id=1534589526 node_paths=PackedStringArray("grab_area", "parent")]
-script = ExtResource("1_ka6h1")
+script = ExtResource("1_vw5nv")
 grab_area = NodePath("../Area2D")
 parent = NodePath("..")
 metadata/_custom_type_script = "uid://dx8leo388mpyq"
 
 [node name="Ingredient_Component" type="Node" parent="." unique_id=1945884771 node_paths=PackedStringArray("parent", "label", "grab_component")]
-script = ExtResource("2_jqsdo")
+script = ExtResource("2_rcrbk")
 parent = NodePath("..")
 label = NodePath("../Label")
 item_name = "Mashed Potatoes"
-effects_list = Array[int]([0, 2])
+effects_list = Array[int]([0, 2, 4])
 grab_component = NodePath("../GrabComponent")
+finished = true
 metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
-
-[node name="SeasonableComponent" type="Node" parent="." unique_id=363822805 node_paths=PackedStringArray("parent")]
-script = ExtResource("3_u1se4")
-replacement_object = ExtResource("4_p7ls1")
-parent = NodePath("..")
-metadata/_custom_type_script = "uid://cmdod6jbv00h0"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1609873041]
 
@@ -55,6 +48,7 @@ rotation = 1.5946369
 shape = SubResource("CapsuleShape2D_bi3u6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749977998]
+modulate = Color(0.47488612, 0.5048908, 0.48703706, 1)
 position = Vector2(1.9999999, -1.9999999)
 scale = Vector2(6.1197853, 6.1197853)
 sprite_frames = SubResource("SpriteFrames_mnfot")
