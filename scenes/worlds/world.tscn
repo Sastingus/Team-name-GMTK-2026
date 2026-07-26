@@ -13,18 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://b1ncux0uqfrdd" path="res://assets/explosion.png" id="10_rbjkb"]
 [ext_resource type="Theme" uid="uid://bfti8v7mjvobe" path="res://assets/button_theme.tres" id="10_vx1ig"]
 [ext_resource type="PackedScene" uid="uid://f1j8e05t3gcv" path="res://scenes/ingredients/infinite_source/infinite_source.tscn" id="11_thq3p"]
-[ext_resource type="PackedScene" uid="uid://ci6wgmtwrjtmv" path="res://scenes/ingredients/turkey/cooked_turkey.tscn" id="12_o01de"]
 [ext_resource type="PackedScene" uid="uid://cvbqsoo7pyc0e" path="res://scenes/ingredients/deviled_egg/new_egg.tscn" id="12_svvlm"]
 [ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="13_3k0i1"]
-[ext_resource type="PackedScene" uid="uid://btq38v130hwa5" path="res://scenes/ingredients/corn/cooked_corn.tscn" id="13_ibdix"]
-[ext_resource type="PackedScene" uid="uid://4fg5ks6px2aa" path="res://scenes/ingredients/deviled_egg/seasoned_egg.tscn" id="14_ibdix"]
 [ext_resource type="PackedScene" uid="uid://bxx27r8k46lmy" path="res://scenes/ingredients/turkey/new_turkey.tscn" id="14_rjcos"]
 [ext_resource type="PackedScene" uid="uid://c0p77y6hukof" path="res://scenes/tools/recipe_card/recipe_card.tscn" id="14_svvlm"]
-[ext_resource type="PackedScene" uid="uid://cy2bsdgepiyge" path="res://scenes/ingredients/cranberry_sauce/cooked_cranberry.tscn" id="15_va40k"]
 [ext_resource type="PackedScene" uid="uid://c4gew3tk35if6" path="res://scenes/ingredients/stuffing/new_stuffing.tscn" id="15_w8a3b"]
 [ext_resource type="PackedScene" uid="uid://b2ym0txvpxj0f" path="res://scenes/ingredients/corn/new_corn.tscn" id="16_1i314"]
 [ext_resource type="PackedScene" uid="uid://blqe2oodbsuac" path="res://scenes/ingredients/cranberry_sauce/new_cranberry.tscn" id="16_5kpmn"]
-[ext_resource type="PackedScene" uid="uid://itjdx2a1brfh" path="res://scenes/ingredients/stuffing/cooked_stuffing.tscn" id="16_jcedh"]
 [ext_resource type="PackedScene" uid="uid://clef80eg1phc3" path="res://scenes/ingredients/pumpkin_pie/pumpkin.tscn" id="17_qld6t"]
 [ext_resource type="PackedScene" uid="uid://ntwsa16ebcsq" path="res://scenes/tools/crust/crust.tscn" id="18_8l1xj"]
 [ext_resource type="PackedScene" uid="uid://bi6dldcc3mifa" path="res://scenes/ingredients/mashed_potatoes/new_potato.tscn" id="18_np8mm"]
@@ -538,18 +533,6 @@ position = Vector2(-471, 240)
 [node name="Trashcan" parent="PlateStation" unique_id=1075580354 instance=ExtResource("24_wjnv7")]
 position = Vector2(487, -252)
 scale = Vector2(2.4243045, 2.4243045)
-
-[node name="Cooked_Turkey" parent="PlateStation" unique_id=1213985600 instance=ExtResource("12_o01de")]
-position = Vector2(285, 211)
-
-[node name="Cooked_Corn" parent="PlateStation" unique_id=1639918259 instance=ExtResource("13_ibdix")]
-position = Vector2(285, 211)
-
-[node name="SeasonedEgg" parent="PlateStation" unique_id=1420188800 instance=ExtResource("14_ibdix")]
-
-[node name="Cooked_Cranberrry" parent="PlateStation" unique_id=747567422 instance=ExtResource("15_va40k")]
-
-[node name="Cooked_Stuffing" parent="PlateStation" unique_id=2046758528 instance=ExtResource("16_jcedh")]
 
 [node name="ShelfStation" type="Node2D" parent="." unique_id=830848079]
 script = ExtResource("2_jwygn")
