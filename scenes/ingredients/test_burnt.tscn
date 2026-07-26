@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnx8wooa55yh5"]
+[gd_scene format=3 uid="uid://bnx8wooa55yh5"]
 
 [ext_resource type="Script" uid="uid://b457sh2i4dh0g" path="res://scenes/components/cuttable_component.gd" id="1_fb30w"]
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="2_8od5s"]
