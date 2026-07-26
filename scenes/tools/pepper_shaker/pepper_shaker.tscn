@@ -94,4 +94,11 @@ scale = Vector2(0.48540342, 0.48540342)
 position = Vector2(0, 17)
 shape = SubResource("CapsuleShape2D_e6ruh")
 
+[node name="Label" type="Label" parent="." unique_id=427116435]
+offset_left = -22.0
+offset_top = -88.0
+offset_right = 23.0
+offset_bottom = -72.0
+text = "Pepper"
+
 [connection signal="body_entered" from="PepperArea" to="." method="_on_pepper_area_body_entered"]

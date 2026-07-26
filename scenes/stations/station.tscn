@@ -55,7 +55,7 @@ mouse_filter = 2
 color = Color(0.5176471, 0.49411765, 0.5294118, 1)
 
 [node name="Background" type="ColorRect" parent="CollisionBox" unique_id=1674772247]
-z_index = -2
+z_index = -100
 offset_left = -644.0
 offset_top = -422.0
 offset_right = 642.0
@@ -64,7 +64,7 @@ mouse_filter = 2
 color = Color(0.27058825, 0.15686275, 0.23529412, 1)
 
 [node name="BackgroundHighlights" type="ColorRect" parent="CollisionBox" unique_id=657738624]
-z_index = -2
+z_index = -100
 offset_left = -644.0
 offset_top = -422.0
 offset_right = 642.0
