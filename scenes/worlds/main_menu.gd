@@ -22,7 +22,7 @@ func _on_hard_mode_button_toggled(toggled_on: bool) -> void:
 	match toggled_on: 
 		true: 
 			hard_mode_button.text = "Hard Mode"
-			Globals.GAME_TIME = 120
+			Globals.GAME_TIME = 100
 			Globals.game_timer = Globals.GAME_TIME
 		false: 
 			hard_mode_button.text = "Easy Mode"
