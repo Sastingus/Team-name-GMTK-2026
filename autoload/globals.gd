@@ -12,7 +12,7 @@ var current_recipe := 1
 
 var in_game := false
 var game_timer := 0.0
-var GAME_TIME = 30
+var GAME_TIME = 300
 
 var current_station : Stations = Stations.KITCHEN
 
