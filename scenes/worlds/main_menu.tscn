@@ -134,12 +134,13 @@ text = "Recipes"
 [node name="Label" type="Label" parent="Control" unique_id=1887727985]
 z_index = 1
 layout_mode = 0
-offset_left = 439.99997
-offset_top = 200.0
-offset_right = 536.0
-offset_bottom = 223.0
-scale = Vector2(9.5199995, 9.5199995)
-text = "Game Name"
+offset_left = 640.0
+offset_top = 182.0
+offset_right = 1112.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 91
+text = "Microwave 
+Thanksgiving"
 autowrap_trim_flags = 128
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1768084442]
