@@ -20,7 +20,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gpru"]
-size = Vector2(310, 62)
+size = Vector2(310, 135)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07jyi"]
 size = Vector2(314, 26)
@@ -190,7 +190,7 @@ position = Vector2(11.805825, -0.6213592)
 scale = Vector2(0.6213592, 0.6213592)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/PlatingArea" unique_id=101243668]
-position = Vector2(-12, -11)
+position = Vector2(-12, -47.5)
 shape = SubResource("RectangleShape2D_1gpru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1075054988]
