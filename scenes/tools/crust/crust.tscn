@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://blipp3kyphxgt" path="res://scenes/ingredients/pumpkin_pie/raw_pumpkin_pie.tscn" id="2_ibsq7"]
 [ext_resource type="Texture2D" uid="uid://gp6qoftw6ith" path="res://assets/Sprite-0008.png" id="2_uopgt"]
 [ext_resource type="Script" uid="uid://dx8leo388mpyq" path="res://scenes/components/grab_component.gd" id="3_ibsq7"]
+[ext_resource type="Script" uid="uid://cq4cjkdh2qudr" path="res://scenes/components/ingredient_component.gd" id="5_eewq7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1gpru"]
 radius = 21.0
@@ -53,5 +54,22 @@ metadata/_custom_type_script = "uid://dx8leo388mpyq"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea" unique_id=1338901497]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_330u6")
+
+[node name="Ingredient_Component" type="Node" parent="." unique_id=783601708 node_paths=PackedStringArray("parent", "label", "grab_component")]
+script = ExtResource("5_eewq7")
+parent = NodePath("..")
+label = NodePath("../Label")
+item_name = "Empty Crust"
+grab_component = NodePath("../GrabComponent")
+metadata/_custom_type_script = "uid://cq4cjkdh2qudr"
+
+[node name="Label" type="Label" parent="." unique_id=1030593737]
+top_level = true
+offset_left = -61.0
+offset_top = -112.0
+offset_right = 66.0
+offset_bottom = -26.0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -11,9 +11,6 @@ texture = ExtResource("1_lbl2b")
 texture = ExtResource("1_lbl2b")
 modulate_color = Color(0.7274283, 0.7274284, 0.7274283, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gft63"]
-texture = ExtResource("1_lbl2b")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o40nt"]
 texture = ExtResource("1_lbl2b")
 modulate_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
@@ -22,5 +19,5 @@ modulate_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_pfs1t")
 Button/styles/focus = SubResource("StyleBoxEmpty_1gpru")
 Button/styles/hover = SubResource("StyleBoxTexture_xy320")
-Button/styles/normal = SubResource("StyleBoxTexture_gft63")
+Button/styles/normal = SubResource("StyleBoxTexture_pfs1t")
 Button/styles/pressed = SubResource("StyleBoxTexture_o40nt")

@@ -8,9 +8,20 @@
 [ext_resource type="AudioStream" uid="uid://beec1sm6jcqn0" path="res://assets/music/MenuA.mp3" id="6_oa4j6"]
 [ext_resource type="PackedScene" uid="uid://dvnngx1t1ppdt" path="res://scenes/stations/station.tscn" id="7_saku1"]
 [ext_resource type="PackedScene" uid="uid://c0p77y6hukof" path="res://scenes/tools/recipe_card/recipe_card.tscn" id="8_byytg"]
+[ext_resource type="Texture2D" uid="uid://cah3ar0eyk82r" path="res://assets/Sprite-0013.png" id="10_58tgc"]
 
 [sub_resource type="Theme" id="Theme_1b5k1"]
 default_font = ExtResource("3_v0ctj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_07jyi"]
+texture = ExtResource("10_58tgc")
+modulate_color = Color(0, 2.6569753, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7jlo"]
+texture = ExtResource("10_58tgc")
+modulate_color = Color(0.6273014, 3.128499e-07, 0.26739392, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1gpru"]
 
 [sub_resource type="Animation" id="Animation_wbiwk"]
 length = 0.001
@@ -121,15 +132,15 @@ layout_mode = 2
 theme = ExtResource("3_jixok")
 text = "Start"
 
-[node name="Quit" type="Button" parent="Control/VBoxContainer" unique_id=542034038]
-layout_mode = 2
-theme = ExtResource("3_jixok")
-text = "Quit"
-
 [node name="Recipes" type="Button" parent="Control/VBoxContainer" unique_id=145994486]
 layout_mode = 2
 theme = ExtResource("3_jixok")
 text = "Recipes"
+
+[node name="Quit" type="Button" parent="Control/VBoxContainer" unique_id=542034038]
+layout_mode = 2
+theme = ExtResource("3_jixok")
+text = "Quit"
 
 [node name="Label" type="Label" parent="Control" unique_id=1887727985]
 z_index = 1
@@ -142,6 +153,19 @@ theme_override_font_sizes/font_size = 91
 text = "Microwave 
 Thanksgiving"
 autowrap_trim_flags = 128
+
+[node name="HardModeButton" type="Button" parent="Control" unique_id=76712275]
+layout_mode = 0
+offset_left = 366.0
+offset_top = -208.0
+offset_right = 465.0
+offset_bottom = -186.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_07jyi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h7jlo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_07jyi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1gpru")
+toggle_mode = true
+text = "Easy Mode"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1768084442]
 root_node = NodePath("AnimatedSprite2D")
@@ -268,9 +292,18 @@ offset_bottom = 243.0
 theme = ExtResource("3_jixok")
 text = "Back to main menu"
 
+[node name="Label" type="Label" parent="." unique_id=918838441]
+offset_left = 100.0
+offset_top = 585.0
+offset_right = 365.0
+offset_bottom = 658.0
+text = "Left Click / Hold to grab objects
+Right Click or Space bar to open stations"
+
 [connection signal="pressed" from="Control/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Recipes" to="." method="_on_recipes_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="Control/HardModeButton" to="." method="_on_hard_mode_button_toggled"]
 [connection signal="pressed" from="RecipeStation/NextButton" to="RecipeStation/TurkeyRecipeCard2" method="next_recipe"]
 [connection signal="pressed" from="RecipeStation/BackButton" to="RecipeStation/TurkeyRecipeCard2" method="back_recipe"]
 [connection signal="pressed" from="RecipeStation/Recipes" to="." method="back_to_menu"]
