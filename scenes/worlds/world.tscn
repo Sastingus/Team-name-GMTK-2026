@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://clef80eg1phc3" path="res://scenes/ingredients/pumpkin_pie/pumpkin.tscn" id="17_qld6t"]
 [ext_resource type="PackedScene" uid="uid://ntwsa16ebcsq" path="res://scenes/tools/crust/crust.tscn" id="18_8l1xj"]
 [ext_resource type="PackedScene" uid="uid://bi6dldcc3mifa" path="res://scenes/ingredients/mashed_potatoes/new_potato.tscn" id="18_np8mm"]
+[ext_resource type="PackedScene" uid="uid://dhhlve7mk7p2c" path="res://scenes/tools/trashcan/trashcan.tscn" id="24_wjnv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qnlt"]
 size = Vector2(163, 126)
@@ -477,6 +478,10 @@ position = Vector2(3.1746037, -170.6349)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_smwsn")
 
+[node name="Trashcan" parent="KitchenStation" unique_id=315951912 instance=ExtResource("24_wjnv7")]
+position = Vector2(487, -252)
+scale = Vector2(2.4243045, 2.4243045)
+
 [node name="MicrowaveStation" parent="." unique_id=1889921677 instance=ExtResource("1_sqeqr")]
 process_mode = 1
 position = Vector2(3, -1359)
@@ -484,6 +489,10 @@ station_id = 5
 
 [node name="Microwave" parent="MicrowaveStation" unique_id=1913045611 instance=ExtResource("2_vpaal")]
 position = Vector2(-376, 178)
+
+[node name="Trashcan" parent="MicrowaveStation" unique_id=763199815 instance=ExtResource("24_wjnv7")]
+position = Vector2(487, -252)
+scale = Vector2(2.4243045, 2.4243045)
 
 [node name="KnifeStation" parent="." unique_id=1073761248 instance=ExtResource("1_sqeqr")]
 process_mode = 1
@@ -506,6 +515,10 @@ offset_right = 280.0
 offset_bottom = 267.0
 color = Color(0.43459824, 0.3125493, 0.21255377, 1)
 
+[node name="Trashcan" parent="KnifeStation" unique_id=501541710 instance=ExtResource("24_wjnv7")]
+position = Vector2(487, -252)
+scale = Vector2(2.4243045, 2.4243045)
+
 [node name="PlateStation" parent="." unique_id=1350042118 instance=ExtResource("1_sqeqr")]
 process_mode = 1
 position = Vector2(5826, -1363)
@@ -516,6 +529,10 @@ position = Vector2(-28, 230)
 
 [node name="PepperShaker" parent="PlateStation" unique_id=702866216 instance=ExtResource("7_folui")]
 position = Vector2(-471, 240)
+
+[node name="Trashcan" parent="PlateStation" unique_id=1075580354 instance=ExtResource("24_wjnv7")]
+position = Vector2(487, -252)
+scale = Vector2(2.4243045, 2.4243045)
 
 [node name="ShelfStation" type="Node2D" parent="." unique_id=830848079]
 script = ExtResource("2_jwygn")
@@ -716,7 +733,7 @@ scale = Vector2(4.16, 4.16)
 sprite_frames = SubResource("SpriteFrames_nig8m")
 
 [node name="Pumpkin" parent="ShelfStation" unique_id=978820794 instance=ExtResource("11_thq3p")]
-position = Vector2(-2134, -1542)
+position = Vector2(-2869, -1542)
 spawned_item = ExtResource("17_qld6t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/Pumpkin" unique_id=1546873671]
@@ -729,7 +746,7 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_k2k0g")
 
 [node name="EmptyCrust" parent="ShelfStation" unique_id=1590294284 instance=ExtResource("11_thq3p")]
-position = Vector2(-1999, -1547)
+position = Vector2(-2734, -1547)
 spawned_item = ExtResource("18_8l1xj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfStation/EmptyCrust" unique_id=390121808]

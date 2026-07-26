@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dhhlve7mk7p2c"]
+
+[ext_resource type="Script" uid="uid://bm4aigcuaajvh" path="res://scenes/tools/trashcan/trashcan.gd" id="1_mqbap"]
+[ext_resource type="Texture2D" uid="uid://chuoojsur7r8q" path="res://assets/Sprite-00014.png" id="2_1yarq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07jyi"]
+size = Vector2(26, 30)
+
+[node name="Trashcan" type="Area2D" unique_id=315951912]
+script = ExtResource("1_mqbap")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=365062980]
+texture = ExtResource("2_1yarq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=65254928]
+shape = SubResource("RectangleShape2D_07jyi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
